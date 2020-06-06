@@ -50,7 +50,7 @@ int main(int argc, char const *argv[])
     int i=1;
     int write_data;
     char buf[100]={' '};
-    while((n=read(from,buf,sizeof(buf)))!=0){
+    while((i=read(from,buf,sizeof(buf)))!=0){
         s=write_data(new_socket, buf, i);
     }
     close(server_fd);
