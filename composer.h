@@ -1,4 +1,3 @@
-#include <string>
 #include <filesystem>
 #include <vector>
 #include "file_type.h"
