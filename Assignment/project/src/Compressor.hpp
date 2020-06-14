@@ -13,6 +13,8 @@
 class Compressor
 {
 private:
+    std::string file_name; /// Keeps the directory name
+    std::vector <std::string> data; /// Keeps the directory data
     
 public:
     Compressor(std::string filename);
