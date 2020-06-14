@@ -15,8 +15,6 @@
 class DeCompress : public Compressor
 {
 private:
-    std::string file_name; /// Keeps the directory name
-    std::vector <std::string> data; /// Keeps the directory data
 
     DeCompress(std::string _file_name);
     ~DeCompress();
