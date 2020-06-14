@@ -10,7 +10,7 @@ private:
 public:
     Receiver(int port, std::string input);
 
-    void receiverData(); // receives data from port m_port and writes it to path m_output
+    void receiver_data(); // receives data from port m_port and writes it to path m_output
 };
 
 

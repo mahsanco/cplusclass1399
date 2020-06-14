@@ -10,7 +10,7 @@ private:
 public:
     Sender(int port, std::string input);
 
-    void sendData(); // reads data from m_input and sends it to port m_port
+    void send_data(); // reads data from m_input and sends it to port m_port
 };
 
 
