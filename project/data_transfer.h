@@ -21,12 +21,12 @@ class data_transfer
 		 * @return is encrypted data that we received
 		 */
 		static std::string receiver(int port);
-	private:
 		/*
-		 * constructor
+		 * Constructor
 		 */
 		data_transfer() ;
-		static data_transfer *instance ;/*instance of object*/
+	private:
+		static data_transfer *instance ;///Instance of object
 	
 
-}
+};

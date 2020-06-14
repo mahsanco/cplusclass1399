@@ -1,4 +1,4 @@
-#include <filesystem>
+#include <boost/filesystem.hpp>
 #include <vector>
 #include "file_type.h"
 class compress
@@ -12,23 +12,23 @@ class compress
 		static compress *get_instance() ;
 	
 		/*
-		 * compress a path
+		 * Compress a path
 		 * @param path of file or folder
 		 * @return compressed file in one object
 		 */
-		static std::vector<file_type> compressor(std::filesystem::path path) ;
+		static std::vector<file_type> compressor(boost::filesystem::path path) ;
 		
 		/*
-		 * decompress a group of files in path
+		 * Decompress a group of files in path
 		 * @param object_of_files is our files
 		 * @param path is a path that we put our files there
 		 */
-		static void decompress(std::vector<file_type> &object_of_files,std::filesystem::path path) ;
-	private:
+		static void decompress(std::vector<file_type> &object_of_files,boost::filesystem::path path) ;
 		/*
-		 * constructor
+		 * Constructor
 		 */
 		compress() ;
-		static compress *instance ;/*instance of object*/
+	private:
+		static compress *instance ;///Instance of object
 	
 };
