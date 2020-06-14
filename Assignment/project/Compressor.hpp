@@ -1,3 +1,9 @@
+/**
+ * Base Class of Compress and DeCompress classes.
+ * Returns a compressed or decompressed version of a input string.
+ * Compresses or decompresses an input string using the ... algorithm.
+ */
+
 #ifndef _Compressor_
 #define _Compressor_ 
 
@@ -6,10 +12,18 @@
 
 class Compressor
 {
-private:
+private :
+
+    /// Keeps the directory name
+    std::string file_name; 
     
-public:
+    /// Keeps the directory data
+    std::vector <std::string> data; 
+    
+public :
+
     Compressor(std::string filename);
+
     ~Compressor();
 	
 };
