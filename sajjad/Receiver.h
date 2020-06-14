@@ -2,13 +2,15 @@
 #define cplusclass1399_sajjad_RECIEVER_H
 
 #include<string>
-class Reciever {
+
+class Receiver {
 private:
     int m_port;
     std::string m_output;
 public:
-    Reciever(int port, std::string input);
-    void receiverData();
+    Receiver(int port, std::string input);
+
+    void receiverData(); // receives data from port m_port and writes it to path m_output
 };
 
 
