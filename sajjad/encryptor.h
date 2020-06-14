@@ -2,13 +2,19 @@
 
 class Encryptor{
     public:
-        //constructor that gets the file and initialize the it
-        Encryptor() = default;
+    
+    /* Constructor */
+    Encryptor() = default;
 
-        //method to encrypt a file into another file 
-        fstream Encrypt(fstream file); 
+    /* Receives a file as input and returns an Encrypted file */
+    fstream Encrypt(fstream file); 
 
-        //method to decrypt a file into another file
-        fstream Decrypt(fstream file);
+    /* Receives an encrypted file as input and returns a Decrypted file */ 
+    fstream Decrypt(fstream file);
+
+    private:
+
+    fstream encryptedFile;
+    fstream decryptedFile;
 
 }

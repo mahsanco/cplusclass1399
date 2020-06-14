@@ -4,14 +4,21 @@
 #include <fstream>
 
 class FileSender{
+
     public:     
-        FileSender() = default;
+    /* Constructor */
+    FileSender() = default;
 
-        //method that compress and encrypt a file and then send it via Socket
-        void send(fstream file, Socket socket);
+    /* receives a socket and file as input and sends the file via socket */
+    void send(fstream file, Socket socket);
 
-        //method that recieve a file from socket and then decompress and decrypt it and return it
-        fstream receive(Socket socket);
+    /* receives a socket as input to listen to it to receive a file. returns the file after the file receives compeletly */
+    fstream receive(Socket socket);
+
+    private:
+
+    fstream file;
+    Socket socket;
 
 }
 

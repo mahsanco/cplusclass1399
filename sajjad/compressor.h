@@ -2,11 +2,18 @@
 
 class Compressor{
     public:
-        Compressor() = default;
 
-        //method to compress a file into another file and return it
-        fstream Compress(fstream file);
+    /* Constructor */
+    Compressor() = default;
 
-        //method to decompress a file into another file and return it
-        fstream Decompress(fstream file);
+    /* Recieves a file as input and return a compressed file */
+    fstream Compress(fstream file);
+
+    /* Receives a compressed file as input and returns decompressed file */
+    fstream Decompress(fstream file);
+
+    private:
+
+    fstream compressedFile;
+    fstream decompressedFile;
 }
