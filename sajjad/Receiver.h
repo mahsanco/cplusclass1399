@@ -29,6 +29,11 @@ private:
     int m_port; ///< port of receiving data
     std::string m_output; ///< writes file to this path
 public:
+    /**
+     * constructor
+     * @param port port of receiving data
+     * @param input path of input file
+     */
     Receiver(int port, std::string input);
 
     /**

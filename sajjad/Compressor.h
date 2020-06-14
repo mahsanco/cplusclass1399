@@ -30,6 +30,11 @@ private:
     std::string m_input; ///< keeps path of input file
     std::string m_output; ///< keeps path of output file
 public:
+    /**
+     * constructor
+     * @param input path of input file
+     * @param output path of output file
+     */
     Compressor(std::string input, std::string output);
 
     /**
