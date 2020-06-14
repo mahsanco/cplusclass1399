@@ -3,17 +3,24 @@
 class Compressor{
     public:
 
-    /* Constructor */
+    /// Constructor 
     Compressor() = default;
 
-    /* Recieves a file as input and return a compressed file */
+    /**
+    * Compress a file
+    *
+    * @param param1 file to compress
+    *
+    * @return compressed file 
+    */
     fstream Compress(fstream file);
 
-    /* Receives a compressed file as input and returns decompressed file */
+    /**
+    * Decompress a file
+    *
+    * @param param1 file to Decompress
+    *
+    * @return Decompressed file 
+    */
     fstream Decompress(fstream file);
-
-    private:
-
-    fstream compressedFile;
-    fstream decompressedFile;
 }

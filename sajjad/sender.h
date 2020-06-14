@@ -6,19 +6,27 @@
 class FileSender{
 
     public:     
-    /* Constructor */
+    ///Constructor
     FileSender() = default;
 
-    /* receives a socket and file as input and sends the file via socket */
+    /**
+    * send a file via socket
+    *
+    * @param param1 file to send
+    * @param param2 socket
+    *
+    * @return void
+    */
     void send(fstream file, Socket socket);
 
-    /* receives a socket as input to listen to it to receive a file. returns the file after the file receives compeletly */
+    /**
+    * recieve a file from socket
+    *
+    * @param param1 socket
+    *
+    * @return file
+    */
     fstream receive(Socket socket);
-
-    private:
-
-    fstream file;
-    Socket socket;
 
 }
 
