@@ -17,7 +17,7 @@ class FileSender{
     *
     * @return void
     */
-    void send(fstream file, Socket socket);
+    void send(fstream& file, Socket socket);
 
     /**
     * recieve a file from socket

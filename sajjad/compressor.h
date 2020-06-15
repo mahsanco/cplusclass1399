@@ -13,7 +13,7 @@ class Compressor{
     *
     * @return compressed file 
     */
-    fstream Compress(fstream file);
+    fstream Compress(fstream& file);
 
     /**
     * Decompress a file
@@ -22,5 +22,5 @@ class Compressor{
     *
     * @return Decompressed file 
     */
-    fstream Decompress(fstream file);
+    fstream Decompress(fstream& file);
 }

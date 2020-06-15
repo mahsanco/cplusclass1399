@@ -13,7 +13,7 @@ class Encryptor{
     *
     * @return encrypted file 
     */
-    fstream Encrypt(fstream file); 
+    fstream Encrypt(fstream& file); 
 
     /**
     * Decrypt a file
@@ -22,7 +22,7 @@ class Encryptor{
     *
     * @return decrypted file 
     */
-    fstream Decrypt(fstream file);
+    fstream Decrypt(fstream& file);
     
 
 }
