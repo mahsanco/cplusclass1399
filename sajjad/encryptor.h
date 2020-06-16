@@ -13,7 +13,7 @@ class Encryptor{
     * @param output_path path of encrypted file
     *
     */
-    void Encrypt(const string& input_path, const string& output_path); 
+    void Encrypt(const string& input_path, const string& output_path) const nonexcept; 
 
     /**
     * Decrypt a file
@@ -22,7 +22,7 @@ class Encryptor{
     * @param output_path path of decrypted file 
     *
     */
-    void Decrypt(const string& input_path, const string& output_path);
+    void Decrypt(const string& input_path, const string& output_path) const nonexcept;
     
 
 }

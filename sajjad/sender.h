@@ -16,7 +16,7 @@ class FileSender{
     * @param port port to listen on
     *
     */
-    void send(const string& input_path, int port);
+    void send(const string& input_path, int port) const nonexcept;
 
     /**
     * recieve a file from socket
@@ -25,7 +25,7 @@ class FileSender{
     * @param port port to listen on
     *
     */
-    void receive(const string&   output_path, int port);
+    void receive(const string& output_path, int port) const nonexcept;
 
 }
 
