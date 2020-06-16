@@ -9,22 +9,20 @@ class Encryptor{
     /**
     * Encrypt a file
     *
-    * @param param1 path of file 
-    * @param param2 path of encrypted file
+    * @param input_path path of file 
+    * @param output_path path of encrypted file
     *
-    * @return void 
     */
-    void Encrypt(string inputPath, string outputpath); 
+    void Encrypt(const string& input_path, const string& output_path); 
 
     /**
     * Decrypt a file
     *
-    * @param param1 path of file 
-    * @param param2 path of decrypted file 
+    * @param input_path path of file 
+    * @param output_path path of decrypted file 
     *
-    * @return void
     */
-    void Decrypt(string inputPath, string outputPath);
+    void Decrypt(const string& input_path, const string& output_path);
     
 
 }

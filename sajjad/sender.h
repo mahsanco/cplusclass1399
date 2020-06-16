@@ -12,22 +12,20 @@ class FileSender{
     /**
     * send a file via socket
     *
-    * @param param1 path of file 
-    * @param param2 port to listen on
+    * @param input_path path of file 
+    * @param port port to listen on
     *
-    * @return void
     */
-    void send(string inputPath, int port);
+    void send(const string& input_path, int port);
 
     /**
     * recieve a file from socket
+    *s
+    * @param output_path path of file to write in it 
+    * @param port port to listen on
     *
-    * @param param1 path of file to write in it 
-    * @param param2 port to listen on
-    *
-    * @return void
     */
-    void receive(string outputPath, int port);
+    void receive(const string&   output_path, int port);
 
 }
 

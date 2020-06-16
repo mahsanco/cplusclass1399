@@ -9,20 +9,18 @@ class Compressor{
     /**
     * Compress a file
     *
-    * @param param1 path of file  
-    * @param param1 path of compressed file  
+    * @param input_path path of file  
+    * @param output_path path of compressed file  
     *
-    * @return void
     */
-    void Compress(string inputPath, string outputPath);
+    void Compress(const string& input_path,const string& output_path);
 
     /**
     * Decompress a file
     *
-    * @param param1 path of file  
-    * @param param1 path of decompressed file 
+    * @param input_path path of file  
+    * @param output_path path of decompressed file 
     *
-    * @return void
     */
-    void Decompress(string inputPath, string outputPath);
+    void Decompress(const string& input_path,const string& output_path);
 }
