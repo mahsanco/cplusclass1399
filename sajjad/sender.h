@@ -1,7 +1,7 @@
 #include <compressor.h>
 #include <encryptor.h>
 #include <sys/socket.h> 
-#include <fstream>
+#include <string>
 
 class FileSender{
 
@@ -12,21 +12,22 @@ class FileSender{
     /**
     * send a file via socket
     *
-    * @param param1 file to send
+    * @param param1 path of file 
     * @param param2 socket
     *
     * @return void
     */
-    void send(fstream& file, Socket socket);
+    void send(string inputPath, Socket socket);
 
     /**
     * recieve a file from socket
     *
-    * @param param1 socket
+    * @param param1 path of file to write in it 
+    * @param param2 socket
     *
-    * @return file
+    * @return void
     */
-    fstream receive(Socket socket);
+    void receive(string outputPath, Socket socket);
 
 }
 

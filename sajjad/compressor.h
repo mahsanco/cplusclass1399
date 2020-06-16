@@ -1,4 +1,4 @@
-#include <fstream>
+#include <string>
 
 class Compressor{
     public:
@@ -9,18 +9,20 @@ class Compressor{
     /**
     * Compress a file
     *
-    * @param param1 file to compress
+    * @param param1 path of file  
+    * @param param1 path of compressed file  
     *
-    * @return compressed file 
+    * @return void
     */
-    fstream Compress(fstream& file);
+    void Compress(string inputPath, string outputPath);
 
     /**
     * Decompress a file
     *
-    * @param param1 file to Decompress
+    * @param param1 path of file  
+    * @param param1 path of decompressed file 
     *
-    * @return Decompressed file 
+    * @return void
     */
-    fstream Decompress(fstream& file);
+    void Decompress(string inputPath, string outputPath);
 }

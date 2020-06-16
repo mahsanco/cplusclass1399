@@ -1,4 +1,4 @@
-#include <fstream>
+#include <string>
 
 class Encryptor{
     public:
@@ -9,20 +9,22 @@ class Encryptor{
     /**
     * Encrypt a file
     *
-    * @param param1 file to encrypt
+    * @param param1 path of file 
+    * @param param2 path of encrypted file
     *
-    * @return encrypted file 
+    * @return void 
     */
-    fstream Encrypt(fstream& file); 
+    void Encrypt(string inputPath, string outputpath); 
 
     /**
     * Decrypt a file
     *
-    * @param param1 file to decrypt
+    * @param param1 path of file 
+    * @param param2 path of decrypted file 
     *
-    * @return decrypted file 
+    * @return void
     */
-    fstream Decrypt(fstream& file);
+    void Decrypt(string inputPath, string outputPath);
     
 
 }
