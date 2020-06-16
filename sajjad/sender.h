@@ -13,21 +13,21 @@ class FileSender{
     * send a file via socket
     *
     * @param param1 path of file 
-    * @param param2 socket
+    * @param param2 port to listen on
     *
     * @return void
     */
-    void send(string inputPath, Socket socket);
+    void send(string inputPath, int port);
 
     /**
     * recieve a file from socket
     *
     * @param param1 path of file to write in it 
-    * @param param2 socket
+    * @param param2 port to listen on
     *
     * @return void
     */
-    void receive(string outputPath, Socket socket);
+    void receive(string outputPath, int port);
 
 }
 
