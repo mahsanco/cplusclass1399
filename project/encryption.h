@@ -29,6 +29,8 @@ class encryption
 		 * Constructor
 		 */
 		encryption() ;
-	private:
-		static encryption *instance ;///instance of object
+	
+    private:
+        ///instance of object
+		static encryption *instance ;
 };

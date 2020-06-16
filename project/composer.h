@@ -28,7 +28,9 @@ class compress
 		 * Constructor
 		 */
 		compress() ;
+
 	private:
-		static compress *instance ;///Instance of object
-	
+
+		///Instance of object
+        static compress *instance ;	
 };

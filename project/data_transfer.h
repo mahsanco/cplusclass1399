@@ -25,8 +25,10 @@ class data_transfer
 		 * Constructor
 		 */
 		data_transfer() ;
-	private:
-		static data_transfer *instance ;///Instance of object
 	
+    private:
+		
+        ///Instance of object
+        static data_transfer *instance ;	
 
 };

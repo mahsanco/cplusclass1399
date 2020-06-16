@@ -5,12 +5,22 @@ class file_type
 {
 	private :
 	
-		boost::filesystem::path path ;///Path of file
-		std::string name ;///Name of file
-		std::string data ;///Data of file 
-		int size ;///Size of file
-		std::string type_file ;///Type of file
-	public:
+        ///Path of file
+		boost::filesystem::path path ;
+
+        ///Name of file
+        std::string name ;
+
+        ///Data of file 
+        std::string data ;
+
+        ///Size of file
+        int size ;		
+        
+        ///Type of file
+        std::string type_file ;	
+    
+    public:
 	
 		/*
 		 * @param is path of file
