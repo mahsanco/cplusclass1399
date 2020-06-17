@@ -40,8 +40,9 @@ public:
     /**
      * \brief compress m_input file
      * reads file from path m_input and compresses it to path m_output
+     * \return finished successfully
      */
-    void compress();
+    bool compress();
 };
 
 

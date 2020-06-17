@@ -39,8 +39,9 @@ public:
     /**
      * \brief starts sending data
      * reads data from m_input and sends it to port m_port
+     * \return sent successfully
     */
-    void send_data();
+    bool send_data();
 };
 
 

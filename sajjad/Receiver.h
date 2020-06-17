@@ -39,8 +39,9 @@ public:
     /**
      * \brief starts receiving data
      * receives data from port m_port and writes it to path m_output
+     * \return finished successfully
     */
-    void receiver_data();
+    bool receiver_data();
 };
 
 #endif

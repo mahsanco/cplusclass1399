@@ -39,8 +39,9 @@ public:
     /**
      * \brief encrypts m_input file
      * reads file from path m_input and encrypt it to path m_output
+     * \return finished successfully
      */
-    void encrypt();
+    bool encrypt();
 };
 
 #endif
