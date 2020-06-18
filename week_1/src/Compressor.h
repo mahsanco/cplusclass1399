@@ -22,16 +22,17 @@ class Compressor
 public:
 
     Compressor();
-    
+
     /**
     * Compress files and directories
     *
-    * @param {string} addresses - Addresses of the files or directories.
+    * @param {string} path - main directory.
+    * @param {string} addresses - files or directories' Addresses.
     *
     * @return Compressed file name
     */
-    std::string compress(std::vector<string> &addresses );
-    
+    bool compress(std::string path, std::vector<string>& addresses);
+
     /**
     * Decompress file
     *
@@ -39,5 +40,5 @@ public:
     *
     * @return Deompressed directory name
     */
-    std::string decompress(std::string dirname );
+    bool decompress(std::string filename );
 };

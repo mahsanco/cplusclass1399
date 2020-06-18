@@ -5,11 +5,11 @@
  * and decrypt file to decompressing
  *
  * Auther: mahdigh
- * 
- * Cntact: mahdigh113@gmail.com 
+ *
+ * Cntact: mahdigh113@gmail.com
  *
  * Created on: june 11 2020
- * 
+ *
  ******************************************************************************/
 
 #ifndef ENCRYPTOR_H
@@ -26,12 +26,12 @@ public:
     /**
     * Encrypte compressed file
     *
-    * @param {string} filename - file name.
+    * @param {string} path - main directory.
     *
     * @return Encrypted file name
     */
-    std::string encrypt(std::string filename );
-    
+    bool encrypt(std::string path );
+
     /**
    * Decrypte file
    *
@@ -39,5 +39,5 @@ public:
    *
    * @return Encrypted file name
    */
-    std::string decrypt(std::string filename );
+    bool decrypt(std::string filename );
 };

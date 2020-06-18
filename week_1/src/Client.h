@@ -2,7 +2,7 @@
  * Class client
  *
  * Connect client to socket server and send file to server
- * 
+ *
  *
  * Auther: mahdigh
  *
@@ -17,6 +17,7 @@
 
 #include <iostream>
 #include <string>
+#include <sys/socket.h>
 #include "Compressor.h"
 #include "Encryptor.h"
 
@@ -24,21 +25,23 @@ class client
 {
 public:
 
+    const int port;  /**< client connect server on this port */
+
     Client();
-    
+
     /**
     * Connect to socket
     *
-    * @param {int} port - connect socket client on that port
+    * @param {int} port - client connect server on this port
     *
     * @return connection status
     */
     bool connect_to_server(int port);
-    
+
     /**
-    * send file to server with socket
+    * send file to server
     *
     * @return sending status
     */
-    bool send_file();
+    bool send_file(std::string path, std::vector<string>& addresses);
 };

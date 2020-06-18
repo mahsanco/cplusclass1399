@@ -2,7 +2,6 @@
  * Class server
  *
  * Start socket server and save file from client
- * 
  *
  * Auther: mahdigh
  *
@@ -17,6 +16,7 @@
 
 #include <iostream>
 #include <string>
+#include <sys/socket.h>
 #include "Compressor.h"
 #include "Encryptor.h"
 
@@ -24,21 +24,29 @@ class server
 {
 public:
 
+    const int port;  /**< server is listening on this port */
+
     Server();
+
     
+    /// Receive file from client
+    void receive_file();
+
+    /// Save received file on server
+    void save_file();
+
+private:
+
     /**
     * Create socket
     *
-    * @param {int} port - create socket server on that port
+    * @param {int} port - server is listening on this port
     *
     * @return Server status
     */
-    bool start_server(int port);
+    bool start_accept(int port);
+
     
-    /**
-    * Receive and save file in a server directory
-    *
-    * @return file saving status
-    */
-    bool receive_file();
+    /// Handle threads and make new thread for new client
+    bool handle_accept();
 };
