@@ -34,14 +34,14 @@ public:
      * @param input path of input file
      * @param output path of output file
      */
-    Encryption(std::string input, std::string output);
+    Encryption(const std::string& input, const std::string& output);
 
     /**
      * \brief encrypts m_input file
      * reads file from path m_input and encrypt it to path m_output
      * \return finished successfully
      */
-    bool encrypt();
+    bool encrypt() const noexcept;
 };
 
 #endif

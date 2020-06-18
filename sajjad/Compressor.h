@@ -35,14 +35,14 @@ public:
      * @param input path of input file
      * @param output path of output file
      */
-    Compressor(std::string input, std::string output);
+    Compressor(const std::string& input, const std::string& output);
 
     /**
      * \brief compress m_input file
      * reads file from path m_input and compresses it to path m_output
      * \return finished successfully
      */
-    bool compress();
+    bool compress() const noexcept;
 };
 
 

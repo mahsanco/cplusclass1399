@@ -34,14 +34,14 @@ public:
      * @param port port of sending data
      * @param input path of input file
      */
-    Sender(int port, std::string input);
+    Sender(int port, const std::string& input) const noexcept;
 
     /**
      * \brief starts sending data
      * reads data from m_input and sends it to port m_port
      * \return sent successfully
     */
-    bool send_data();
+    bool send_data() const noexcept;
 };
 
 
