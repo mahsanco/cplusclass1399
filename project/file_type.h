@@ -1,3 +1,7 @@
+#ifndef _FILE_TYPE_H_
+#define _FILE_TYPE_H_
+
+
 #include <string>
 #include <boost/filesystem.hpp>
 
@@ -53,3 +57,5 @@ class file_type
 		int get_size();
 
 };
+
+#endif

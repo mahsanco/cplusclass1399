@@ -1,34 +1,32 @@
+#ifndef _DATA_TRANSFER_H_
+#define _DATA_TRANSFER_H_
+
 #include <string>
 
 class data_transfer
 {
-	public:
+    private:
 		
-		/*
-		 * @return instance of object
-		 */
-		static data_transfer *get_instance() ;
+   	public:
+			
 		
 		/*
 		 * @param hostname is name of server
 		 * @param data is encrypted data that we want send
 		 * @param port is exit port!
 		 */
-		static void sender(std::string hostname,std::string data,int port) ;
+		  void sender(std::string hostname,std::string data,int port) ;
 		
 		/*
 		 * @param is inner port
 		 * @return is encrypted data that we received
 		 */
-		static std::string receiver(int port);
+		  std::string receiver(int port);
 		/*
 		 * Constructor
 		 */
-		data_transfer() ;
+         data_transfer() ;
 	
-    private:
-		
-        ///Instance of object
-        static data_transfer *instance ;	
+ };
 
-};
+#endif
