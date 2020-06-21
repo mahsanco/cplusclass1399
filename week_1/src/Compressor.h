@@ -31,7 +31,7 @@ public:
     *
     * @return Compressed file name
     */
-    bool compress(std::string path, std::vector<string>& addresses);
+    bool compress(std::string path, std::vector<string>& addresses) const;
 
     /**
     * Decompress file
@@ -40,5 +40,5 @@ public:
     *
     * @return Deompressed directory name
     */
-    bool decompress(std::string filename );
+    bool decompress(std::string filename ) const;
 };

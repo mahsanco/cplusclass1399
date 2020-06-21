@@ -25,9 +25,9 @@ class client
 {
 public:
 
-    const int port;  /**< client connect server on this port */
+    int port;  /**< client connect server on this port */
 
-    Client();
+    Client() const;
 
     /**
     * Connect to socket
@@ -43,5 +43,5 @@ public:
     *
     * @return sending status
     */
-    bool send_file(std::string path, std::vector<string>& addresses);
+    bool send_file(std::string path, std::vector<string>& addresses) const noexcept;
 };

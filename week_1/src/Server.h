@@ -24,16 +24,16 @@ class server
 {
 public:
 
-    const int port;  /**< server is listening on this port */
+    int port;  /**< server is listening on this port */
 
-    Server();
+    Server() const;
 
     
     /// Receive file from client
-    void receive_file();
+    void receive_file() const noexcept;
 
     /// Save received file on server
-    void save_file();
+    void save_file() const;
 
 private:
 
@@ -48,5 +48,5 @@ private:
 
     
     /// Handle threads and make new thread for new client
-    bool handle_accept();
+    bool handle_accept() const;
 };

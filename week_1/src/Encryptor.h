@@ -30,7 +30,7 @@ public:
     *
     * @return Encrypted file name
     */
-    bool encrypt(std::string path );
+    bool encrypt(std::string path ) const;
 
     /**
    * Decrypte file
@@ -39,5 +39,5 @@ public:
    *
    * @return Encrypted file name
    */
-    bool decrypt(std::string filename );
+    bool decrypt(std::string filename ) const;
 };
