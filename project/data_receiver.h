@@ -4,22 +4,26 @@
 #include <string>
 #include <thread>
 #include <arpa/inet.h> 
-
+#include <stack>
 //this should be singleton
 class data_receiver
 {
     private:
         
-        int master_socket,addrlen ;
-        struct sockaddr_in address; 
-      
+        static int master_socket,addrlen ;
+        static struct sockaddr_in address; 
+        static bool end ;
+        /*
+         * all new received datas
+         */
+        static std::stack<std::string> data_received ;
         /*
          * the demon is running in background 
          */
         static void demon() ;
         
         //thread of demon
-        std::thread demon_thread ;
+        static std::thread demon_thread ;
    	public:	
 		
 	   
@@ -27,8 +31,15 @@ class data_receiver
 		 * @param is the socket we use
 		 * @return is encrypted data that we received
 		 */
-		  std::string receiver(int socket);
-		
+		  static void receiver(int socket);
+		  
+          /*
+           *end the demon
+           */
+          static void end_program()
+          {
+            end=true ;
+          }
          /*
 		  * Constructor
 		  * @param port is inner port!         
@@ -40,6 +51,7 @@ class data_receiver
           */
          ~data_receiver() ;
          
+
 
  };
 
