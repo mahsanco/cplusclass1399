@@ -1,2 +1,0 @@
-/usr/bin/ar qc libLibModule.a  CMakeFiles/LibModule.dir/src/client/FilePreSending.cpp.o
-/usr/bin/ranlib libLibModule.a
