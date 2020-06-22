@@ -98,6 +98,7 @@ std::vector<file_type> file_type::string_to_vector_of_files(std::string data)
     
 }
 
+#include <iostream>
 void file_type::output_files(boost::filesystem::path inner_path , boost::filesystem::path out_path,std::vector<file_type> vector_of_files) 
 {
     std::string inner_path_str=inner_path.string() ,out_path_str=out_path.string() ;
@@ -105,6 +106,7 @@ void file_type::output_files(boost::filesystem::path inner_path , boost::filesys
     {
         std::string file_path=i.get_path().string() ;
         file_path.replace(0,inner_path_str.size(),out_path_str) ;
+        std::cout<<file_path<<"\n" ;
         if(i.get_size()!=0)
         {
             std::ofstream ofs (file_path, std::ofstream::out) ;

@@ -49,7 +49,7 @@ class file_type
         
         /*
          * Serialization
-         * @param is vector of file_type objects
+         * @param id vector of file_type objects
          * @return a string that represent the parameter
          */
         static std::string vector_of_files_to_string(std::vector<file_type> vector_of_files) ; 
@@ -60,13 +60,7 @@ class file_type
          * @return a vector of file_type
          */
         static std::vector<file_type> string_to_vector_of_files(std::string data) ;
-        /*
-         * output the received files 
-         * @ param inner_path is path of original directory
-         * @ param out_path is path of new directory
-         * @ param vector_of_files 
-         */
-        static void output_files(boost::filesystem::path inner_path , boost::filesystem::path out_path,std::vector<file_type> vector_of_files) ; 
+       // static std::string vector_of_files_to_string(std::vector<file_type, std::allocator<file_type> >
 };
 
 #endif
