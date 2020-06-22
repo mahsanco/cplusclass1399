@@ -1,11 +1,12 @@
 #ifndef SENDER_H
 #define SENDER_Hi
-#include <string>
 
+#include <string>
+#include <vector>
+#include <netinet/in.h>
 
 /***************************************************************************//**
- * This class sends a prepared block of data
- * connects to server(reciever).
+ * This class sends data to server(reciever).
  ******************************************************************************/
 
 class Sender
@@ -15,15 +16,10 @@ class Sender
 public:
      
    /***************************************************************************//**
-    * A constructor with two arguments: port and ip address of server.
+    * A constructor with one argument: port of server.
     ******************************************************************************/ 
-    Sender(size_t port, const std::string &ip_address);
+    Sender(size_t port);
 
-
-   /***************************************************************************//**
-    * This member function tryes to make a connection with server(reciever)
-    ******************************************************************************/
-    void connect_to_server();
 
 
    /***************************************************************************//**
@@ -31,23 +27,27 @@ public:
     * it gets a block of data by refrence as argument,
     * it would return zero, if could send successfuly.
     ******************************************************************************/
-    int send(const std::string&);
+    void send_block(const std::string& block);
+
+    
+   /***************************************************************************//**
+    * This member function sends bocks of data, which are stored in
+    * a vector, one argument: a vector of strings
+    ******************************************************************************/
+    void send_file(std::vector<std::string> &blocks);
+
 
    /***************************************************************************//**
-    * This function  sets port member field.
-    ******************************************************************************/
-    void setPort(size_t);
+    * This member function sends an integer, one argument: integer or size_t
+    ******************************************************************************/    
+    void send_size(size_t size); 
 
-   /***************************************************************************//**
-    * This sets ip_address field.
-    ******************************************************************************/
-    void setIpAddress(const std::string&);
 
 private:
  
     size_t port; ///< the port on which reciever is listening.
-    std::string ip_address; ///< the ip address of reciever
-    
+    struct sockaddr_in reciever_info;
+    int m_socket;
 };
 
 

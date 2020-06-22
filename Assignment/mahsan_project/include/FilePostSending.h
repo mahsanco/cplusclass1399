@@ -16,27 +16,23 @@ class FilePostSending
 public:
 
     /***************************************************************************//**
-     * Constructor with three arguments: name and type of recieved file and recieved blocks
+     * Constructor with three arguments: name and size of recieved file and recieved blocks
      ******************************************************************************/
-    FilePostSending(const std::string &_file_name, const std::string &_file_type, std::vector<std::string> &_blocks);
+    FilePostSending(const std::string &_file_name, size_t _file_size);
+
 
     /***************************************************************************//**
-     * This member function writes a file, it has one argument: address of the file.
+     * This member function writes a file, it two arguments: address of the file and
+     * a vector of strings (blocks of data)
      ******************************************************************************/
-    void write_file(const std::string &address); 
-
-    /***************************************************************************//**
-     * This member function decompresses a compressed file and saves it,
-     * it has one argument: address of compressed file
-     ******************************************************************************/
-    void decompress_file(const std::string &address);
+    void write_file(const std::string &file_path, std::vector<std::string> &blocks); 
 
 
 
 private:
  
     std::string file_name; ///< name of file.
-    std::string file_type; ///< type of file.
+    size_t file_size;
     std::vector<std::string>* blocks; ///< the whole file in blocks.
 };
 

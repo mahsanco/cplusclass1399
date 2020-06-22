@@ -45,8 +45,11 @@ void FilePreSending::read_file(const std::string &_file_path, size_t block_size)
 	    file.read(buffer, window);
 	    blocks.push_back(std::string(buffer));
 	    t_file_size -= window;
+	    delete [] buffer;
 
 	}
+
+	delete [] content;
 	file.close();
     } 
     else std::cout << "Unable to open file";
