@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/server.dir/src/server/FilePostSending.cpp.o CMakeFiles/server.dir/src/server/MainServer.cpp.o  -o server  libLibModule.a -lstdc++fs -lzip 

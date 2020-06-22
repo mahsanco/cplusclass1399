@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/FilePostSending.h
+string
+-
+vector
+-
+
+/home/hossein/Desktop/mahsan_project/src/server/MainServer.cpp
+FilePostSending.h
+-
+

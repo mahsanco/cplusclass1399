@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/client.dir/src/client/FilePreSending.cpp.o CMakeFiles/client.dir/src/client/MainClient.cpp.o  -o client  libLibModule.a -lstdc++fs -lzip 

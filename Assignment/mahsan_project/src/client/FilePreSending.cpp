@@ -15,7 +15,7 @@ FilePreSending::FilePreSending(const std::string &_file_path)
     file_path = _file_path;
     is_directory = fs::is_directory(fs::status(_file_path));
     file_name = fs::path(_file_path).filename();
-
+    
 
 }
 
@@ -23,26 +23,27 @@ FilePreSending::FilePreSending(const std::string &_file_path)
 
 void FilePreSending::read_file(const std::string &_file_path, size_t block_size)
 {   
-
+    
     std::streampos size;
-    std::ifstream file(_file_path, std::ios::in|std::ios::binary|std::ios::ate);
-     
-
+    std::ifstream file(_file_path, std::ios::binary|std::ios::ate);
+    
     if (file.is_open())
     {
         size = file.tellg();
 	file_size = (size_t)size;
+	char *content = new char[file_size];
 	file.seekg(0, std::ios::beg);
-	file.read(&file_data[0], size);
-
+	file.read(content, size);
+	file_data = std::string(content);
+    	
 	size_t t_file_size = file_size;
 
 	while (t_file_size > 0)
 	{
-            std::string buffer;
 	    size_t window = std::min(t_file_size, block_size);
-	    file.read(&buffer[0], window);
-	    blocks.push_back(buffer);
+	    char* buffer = new char[window];
+	    file.read(buffer, window);
+	    blocks.push_back(std::string(buffer));
 	    t_file_size -= window;
 
 	}
@@ -59,8 +60,17 @@ void FilePreSending::compress_file()
 {
     
     int index, err;
-    size_t len;
-    zip *archive = zip_open((file_name + ".zip").c_str(), ZIP_CREATE, &err);
+    zip_uint64_t len;
+    
+    std::string zip_name = file_name + std::string(".zip");    
+    zip *archive = zip_open((zip_name).c_str(), ZIP_CREATE, &err);
+   
+    if(!archive)
+    {
+        std::cout << "could not open or create archive" <<  std::endl;
+        exit(1) ;
+    }
+
     zip_source *source = zip_source_buffer(archive, file_data.c_str(), len, 0);
 
     if(source == NULL) 
@@ -91,11 +101,5 @@ std::string FilePreSending::get_file_name()
 
 
 
-/// small test
-int main()
-{
-    std::string file_path = "/home/hossein/Desktop/1.txt";
-    FilePreSending fp(file_path);
 
-}
 
