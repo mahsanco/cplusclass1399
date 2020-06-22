@@ -6,5 +6,5 @@ CXX_FLAGS =
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/hossein/Desktop/mahsan_project/include 
+CXX_INCLUDES = -I/home/hossein/Desktop/cplusclass/cplusclass1399/Assignment/mahsan_project/include 
 

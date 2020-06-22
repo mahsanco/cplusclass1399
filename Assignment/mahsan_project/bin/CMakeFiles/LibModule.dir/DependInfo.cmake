@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/hossein/Desktop/mahsan_project/src/client/FilePreSending.cpp" "/home/hossein/Desktop/mahsan_project/bin/CMakeFiles/LibModule.dir/src/client/FilePreSending.cpp.o"
+  "/home/hossein/Desktop/cplusclass/cplusclass1399/Assignment/mahsan_project/src/client/FilePreSending.cpp" "/home/hossein/Desktop/cplusclass/cplusclass1399/Assignment/mahsan_project/bin/CMakeFiles/LibModule.dir/src/client/FilePreSending.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

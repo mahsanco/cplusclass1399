@@ -1,4 +1,4 @@
-# Install script for directory: /home/hossein/Desktop/mahsan_project
+# Install script for directory: /home/hossein/Desktop/cplusclass/cplusclass1399/Assignment/mahsan_project
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/hossein/Desktop/mahsan_project/bin/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/hossein/Desktop/cplusclass/cplusclass1399/Assignment/mahsan_project/bin/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

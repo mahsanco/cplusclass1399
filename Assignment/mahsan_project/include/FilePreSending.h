@@ -39,7 +39,8 @@ public:
      ******************************************************************************/
     std::string get_file_name();    
 
-    
+    std::string get_file_data();
+
 private:
 
     std::string file_path; ///< address of file or directory. 

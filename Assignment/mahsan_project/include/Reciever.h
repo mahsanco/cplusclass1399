@@ -1,7 +1,9 @@
 #ifndef RECIEVER_H
 #define RECIEVER_H
-#include <string>
 
+#include <string>
+#include <sys/socket.h>
+#include <netinet/in.h>
 
 /***************************************************************************//**
  * This class makes listens on a defined port, and answers to file senders and
@@ -17,7 +19,7 @@ public:
    /***************************************************************************//**
     * A constructor with two arguments: port and ip address of reciever.
     ******************************************************************************/
-    Reciever(size_t port, const std::string &ip_address);
+    explicit Reciever(size_t port);
 
    /***************************************************************************//**
     * This member function listen on defined socket, and checks if there is a new 
@@ -37,22 +39,13 @@ public:
     ******************************************************************************/
     int recieve(std::vector<std::string> &blocks);
 
-   /***************************************************************************//**
-    * This function  sets port member field.
-    ******************************************************************************/
-    void setPort(size_t);
-
-   /***************************************************************************//**
-    * This sets ip_address field.
-    ******************************************************************************/
-    void setIpAddress(const std::string& _ip_address);
+    
 
 private:
 
     size_t port; ///< the port on which reciever is listening.
-    std::string ip_address; ///< the ip address of reciever
-
-}
+    struct sockaddr_in socket_address;
+};
 
 
 #endif

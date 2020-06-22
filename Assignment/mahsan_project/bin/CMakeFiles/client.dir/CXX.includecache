@@ -12,9 +12,9 @@ string
 vector
 -
 
-/home/hossein/Desktop/mahsan_project/src/client/FilePreSending.cpp
+/home/hossein/Desktop/cplusclass/cplusclass1399/Assignment/mahsan_project/src/client/FilePreSending.cpp
 FilePreSending.h
-/home/hossein/Desktop/mahsan_project/src/client/FilePreSending.h
+/home/hossein/Desktop/cplusclass/cplusclass1399/Assignment/mahsan_project/src/client/FilePreSending.h
 string
 -
 iostream
@@ -26,13 +26,5 @@ vector
 experimental/filesystem
 -
 zip.h
--
-
-/home/hossein/Desktop/mahsan_project/src/client/MainClient.cpp
-../include/FilePreSending.h
-/home/hossein/Desktop/mahsan_project/src/include/FilePreSending.h
-iostream
--
-string
 -
 

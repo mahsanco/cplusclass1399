@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/hossein/Desktop/mahsan_project
+CMAKE_SOURCE_DIR = /home/hossein/Desktop/cplusclass/cplusclass1399/Assignment/mahsan_project
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/hossein/Desktop/mahsan_project/bin
+CMAKE_BINARY_DIR = /home/hossein/Desktop/cplusclass/cplusclass1399/Assignment/mahsan_project/bin
 
 # Include any dependencies generated for this target.
 include CMakeFiles/client.dir/depend.make
@@ -59,29 +59,29 @@ include CMakeFiles/client.dir/flags.make
 
 CMakeFiles/client.dir/src/client/FilePreSending.cpp.o: CMakeFiles/client.dir/flags.make
 CMakeFiles/client.dir/src/client/FilePreSending.cpp.o: ../src/client/FilePreSending.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hossein/Desktop/mahsan_project/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/client.dir/src/client/FilePreSending.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/client.dir/src/client/FilePreSending.cpp.o -c /home/hossein/Desktop/mahsan_project/src/client/FilePreSending.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hossein/Desktop/cplusclass/cplusclass1399/Assignment/mahsan_project/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/client.dir/src/client/FilePreSending.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/client.dir/src/client/FilePreSending.cpp.o -c /home/hossein/Desktop/cplusclass/cplusclass1399/Assignment/mahsan_project/src/client/FilePreSending.cpp
 
 CMakeFiles/client.dir/src/client/FilePreSending.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/client.dir/src/client/FilePreSending.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hossein/Desktop/mahsan_project/src/client/FilePreSending.cpp > CMakeFiles/client.dir/src/client/FilePreSending.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hossein/Desktop/cplusclass/cplusclass1399/Assignment/mahsan_project/src/client/FilePreSending.cpp > CMakeFiles/client.dir/src/client/FilePreSending.cpp.i
 
 CMakeFiles/client.dir/src/client/FilePreSending.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/client.dir/src/client/FilePreSending.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hossein/Desktop/mahsan_project/src/client/FilePreSending.cpp -o CMakeFiles/client.dir/src/client/FilePreSending.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hossein/Desktop/cplusclass/cplusclass1399/Assignment/mahsan_project/src/client/FilePreSending.cpp -o CMakeFiles/client.dir/src/client/FilePreSending.cpp.s
 
 CMakeFiles/client.dir/src/client/MainClient.cpp.o: CMakeFiles/client.dir/flags.make
 CMakeFiles/client.dir/src/client/MainClient.cpp.o: ../src/client/MainClient.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hossein/Desktop/mahsan_project/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/client.dir/src/client/MainClient.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/client.dir/src/client/MainClient.cpp.o -c /home/hossein/Desktop/mahsan_project/src/client/MainClient.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hossein/Desktop/cplusclass/cplusclass1399/Assignment/mahsan_project/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/client.dir/src/client/MainClient.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/client.dir/src/client/MainClient.cpp.o -c /home/hossein/Desktop/cplusclass/cplusclass1399/Assignment/mahsan_project/src/client/MainClient.cpp
 
 CMakeFiles/client.dir/src/client/MainClient.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/client.dir/src/client/MainClient.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hossein/Desktop/mahsan_project/src/client/MainClient.cpp > CMakeFiles/client.dir/src/client/MainClient.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hossein/Desktop/cplusclass/cplusclass1399/Assignment/mahsan_project/src/client/MainClient.cpp > CMakeFiles/client.dir/src/client/MainClient.cpp.i
 
 CMakeFiles/client.dir/src/client/MainClient.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/client.dir/src/client/MainClient.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hossein/Desktop/mahsan_project/src/client/MainClient.cpp -o CMakeFiles/client.dir/src/client/MainClient.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hossein/Desktop/cplusclass/cplusclass1399/Assignment/mahsan_project/src/client/MainClient.cpp -o CMakeFiles/client.dir/src/client/MainClient.cpp.s
 
 # Object files for target client
 client_OBJECTS = \
@@ -96,7 +96,7 @@ client: CMakeFiles/client.dir/src/client/MainClient.cpp.o
 client: CMakeFiles/client.dir/build.make
 client: libLibModule.a
 client: CMakeFiles/client.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/hossein/Desktop/mahsan_project/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable client"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/hossein/Desktop/cplusclass/cplusclass1399/Assignment/mahsan_project/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable client"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/client.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -109,6 +109,6 @@ CMakeFiles/client.dir/clean:
 .PHONY : CMakeFiles/client.dir/clean
 
 CMakeFiles/client.dir/depend:
-	cd /home/hossein/Desktop/mahsan_project/bin && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/hossein/Desktop/mahsan_project /home/hossein/Desktop/mahsan_project /home/hossein/Desktop/mahsan_project/bin /home/hossein/Desktop/mahsan_project/bin /home/hossein/Desktop/mahsan_project/bin/CMakeFiles/client.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/hossein/Desktop/cplusclass/cplusclass1399/Assignment/mahsan_project/bin && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/hossein/Desktop/cplusclass/cplusclass1399/Assignment/mahsan_project /home/hossein/Desktop/cplusclass/cplusclass1399/Assignment/mahsan_project /home/hossein/Desktop/cplusclass/cplusclass1399/Assignment/mahsan_project/bin /home/hossein/Desktop/cplusclass/cplusclass1399/Assignment/mahsan_project/bin /home/hossein/Desktop/cplusclass/cplusclass1399/Assignment/mahsan_project/bin/CMakeFiles/client.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/client.dir/depend
 

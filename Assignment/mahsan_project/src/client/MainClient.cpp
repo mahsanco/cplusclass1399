@@ -1,4 +1,4 @@
-#include "../include/FilePreSending.h"
+#include "FilePreSending.h"
 #include <iostream>
 #include <string>
 
@@ -10,5 +10,6 @@ int main()
     std::cout << "bye";
     fp.read_file(file_path, 128);
     fp.compress_file();
+    std::cout << fp.get_file_data(); 
     return 0;
 }

@@ -1,5 +1,5 @@
 #ifndef SENDER_H
-#define SENDER_H
+#define SENDER_Hi
 #include <string>
 
 
@@ -48,7 +48,7 @@ private:
     size_t port; ///< the port on which reciever is listening.
     std::string ip_address; ///< the ip address of reciever
     
-}
+};
 
 
 #endif

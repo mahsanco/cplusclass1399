@@ -60,7 +60,6 @@ void FilePreSending::compress_file()
 {
     
     int index, err;
-    zip_uint64_t len;
     
     std::string zip_name = file_name + std::string(".zip");    
     zip *archive = zip_open((zip_name).c_str(), ZIP_CREATE, &err);
@@ -71,7 +70,7 @@ void FilePreSending::compress_file()
         exit(1) ;
     }
 
-    zip_source *source = zip_source_buffer(archive, file_data.c_str(), len, 0);
+    zip_source *source = zip_source_buffer(archive, file_data.c_str(), file_size, 0);
 
     if(source == NULL) 
     {  
@@ -99,7 +98,11 @@ std::string FilePreSending::get_file_name()
     return file_name;
 }
 
+std::string FilePreSending::get_file_data()
+{
+    return file_data;
 
+}
 
 
 

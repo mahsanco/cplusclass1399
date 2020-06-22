@@ -1,1 +1,0 @@
-/usr/bin/c++    -rdynamic CMakeFiles/test.dir/src/MainClient.cpp.o CMakeFiles/test.dir/src/FilePreSending.cpp.o  -o test  libLibModule.a -lstdc++fs -lzip 

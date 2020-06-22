@@ -1,5 +1,5 @@
-/home/hossein/Desktop/mahsan_project/bin/CMakeFiles/rebuild_cache.dir
-/home/hossein/Desktop/mahsan_project/bin/CMakeFiles/LibModule.dir
-/home/hossein/Desktop/mahsan_project/bin/CMakeFiles/edit_cache.dir
-/home/hossein/Desktop/mahsan_project/bin/CMakeFiles/client.dir
-/home/hossein/Desktop/mahsan_project/bin/CMakeFiles/server.dir
+/home/hossein/Desktop/cplusclass/cplusclass1399/Assignment/mahsan_project/bin/CMakeFiles/rebuild_cache.dir
+/home/hossein/Desktop/cplusclass/cplusclass1399/Assignment/mahsan_project/bin/CMakeFiles/LibModule.dir
+/home/hossein/Desktop/cplusclass/cplusclass1399/Assignment/mahsan_project/bin/CMakeFiles/edit_cache.dir
+/home/hossein/Desktop/cplusclass/cplusclass1399/Assignment/mahsan_project/bin/CMakeFiles/client.dir
+/home/hossein/Desktop/cplusclass/cplusclass1399/Assignment/mahsan_project/bin/CMakeFiles/server.dir

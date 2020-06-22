@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/hossein/Desktop/mahsan_project
+CMAKE_SOURCE_DIR = /home/hossein/Desktop/cplusclass/cplusclass1399/Assignment/mahsan_project
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/hossein/Desktop/mahsan_project/bin
+CMAKE_BINARY_DIR = /home/hossein/Desktop/cplusclass/cplusclass1399/Assignment/mahsan_project/bin
 
 # Include any dependencies generated for this target.
 include CMakeFiles/LibModule.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/LibModule.dir/flags.make
 
 CMakeFiles/LibModule.dir/src/client/FilePreSending.cpp.o: CMakeFiles/LibModule.dir/flags.make
 CMakeFiles/LibModule.dir/src/client/FilePreSending.cpp.o: ../src/client/FilePreSending.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hossein/Desktop/mahsan_project/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/LibModule.dir/src/client/FilePreSending.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LibModule.dir/src/client/FilePreSending.cpp.o -c /home/hossein/Desktop/mahsan_project/src/client/FilePreSending.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hossein/Desktop/cplusclass/cplusclass1399/Assignment/mahsan_project/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/LibModule.dir/src/client/FilePreSending.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LibModule.dir/src/client/FilePreSending.cpp.o -c /home/hossein/Desktop/cplusclass/cplusclass1399/Assignment/mahsan_project/src/client/FilePreSending.cpp
 
 CMakeFiles/LibModule.dir/src/client/FilePreSending.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LibModule.dir/src/client/FilePreSending.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hossein/Desktop/mahsan_project/src/client/FilePreSending.cpp > CMakeFiles/LibModule.dir/src/client/FilePreSending.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hossein/Desktop/cplusclass/cplusclass1399/Assignment/mahsan_project/src/client/FilePreSending.cpp > CMakeFiles/LibModule.dir/src/client/FilePreSending.cpp.i
 
 CMakeFiles/LibModule.dir/src/client/FilePreSending.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LibModule.dir/src/client/FilePreSending.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hossein/Desktop/mahsan_project/src/client/FilePreSending.cpp -o CMakeFiles/LibModule.dir/src/client/FilePreSending.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hossein/Desktop/cplusclass/cplusclass1399/Assignment/mahsan_project/src/client/FilePreSending.cpp -o CMakeFiles/LibModule.dir/src/client/FilePreSending.cpp.s
 
 # Object files for target LibModule
 LibModule_OBJECTS = \
@@ -80,7 +80,7 @@ LibModule_EXTERNAL_OBJECTS =
 libLibModule.a: CMakeFiles/LibModule.dir/src/client/FilePreSending.cpp.o
 libLibModule.a: CMakeFiles/LibModule.dir/build.make
 libLibModule.a: CMakeFiles/LibModule.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/hossein/Desktop/mahsan_project/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libLibModule.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/hossein/Desktop/cplusclass/cplusclass1399/Assignment/mahsan_project/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libLibModule.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/LibModule.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/LibModule.dir/link.txt --verbose=$(VERBOSE)
 
@@ -94,6 +94,6 @@ CMakeFiles/LibModule.dir/clean:
 .PHONY : CMakeFiles/LibModule.dir/clean
 
 CMakeFiles/LibModule.dir/depend:
-	cd /home/hossein/Desktop/mahsan_project/bin && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/hossein/Desktop/mahsan_project /home/hossein/Desktop/mahsan_project /home/hossein/Desktop/mahsan_project/bin /home/hossein/Desktop/mahsan_project/bin /home/hossein/Desktop/mahsan_project/bin/CMakeFiles/LibModule.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/hossein/Desktop/cplusclass/cplusclass1399/Assignment/mahsan_project/bin && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/hossein/Desktop/cplusclass/cplusclass1399/Assignment/mahsan_project /home/hossein/Desktop/cplusclass/cplusclass1399/Assignment/mahsan_project /home/hossein/Desktop/cplusclass/cplusclass1399/Assignment/mahsan_project/bin /home/hossein/Desktop/cplusclass/cplusclass1399/Assignment/mahsan_project/bin /home/hossein/Desktop/cplusclass/cplusclass1399/Assignment/mahsan_project/bin/CMakeFiles/LibModule.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/LibModule.dir/depend
 

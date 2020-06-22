@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/hossein/Desktop/mahsan_project
+CMAKE_SOURCE_DIR = /home/hossein/Desktop/cplusclass/cplusclass1399/Assignment/mahsan_project
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/hossein/Desktop/mahsan_project/bin
+CMAKE_BINARY_DIR = /home/hossein/Desktop/cplusclass/cplusclass1399/Assignment/mahsan_project/bin
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hossein/Desktop/mahsan_project/bin/CMakeFiles /home/hossein/Desktop/mahsan_project/bin/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hossein/Desktop/cplusclass/cplusclass1399/Assignment/mahsan_project/bin/CMakeFiles /home/hossein/Desktop/cplusclass/cplusclass1399/Assignment/mahsan_project/bin/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hossein/Desktop/mahsan_project/bin/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hossein/Desktop/cplusclass/cplusclass1399/Assignment/mahsan_project/bin/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
