@@ -5,10 +5,9 @@
 #include <vector>
 
 
-FilePostSending::FilePostSending(const std::string &_file_name, size_t _file_size)
+FilePostSending::FilePostSending(const std::string &_file_name)
 {
     file_name = _file_name;
-    file_size = _file_size;
 }
 
 

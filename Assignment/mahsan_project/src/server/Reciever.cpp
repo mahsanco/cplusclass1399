@@ -5,6 +5,8 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 
+
+
 Reciever::Reciever(size_t _port)
 {
     port = _port
@@ -20,7 +22,7 @@ Reciever::Reciever(size_t _port)
 
 
 
-void Reciever::handle_sender(int socket)
+void Reciever::handle_sender(int socket, std::vector<std::string> &data)
 {
     hello = "hello";
     send(socket, hello, hello.size(), 0);

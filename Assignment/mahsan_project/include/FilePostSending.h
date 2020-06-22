@@ -18,7 +18,7 @@ public:
     /***************************************************************************//**
      * Constructor with three arguments: name and size of recieved file and recieved blocks
      ******************************************************************************/
-    FilePostSending(const std::string &_file_name, size_t _file_size);
+    FilePostSending(const std::string &_file_name);
 
 
     /***************************************************************************//**
@@ -32,8 +32,7 @@ public:
 private:
  
     std::string file_name; ///< name of file.
-    size_t file_size;
-    std::vector<std::string>* blocks; ///< the whole file in blocks.
+
 };
 
 
