@@ -13,9 +13,9 @@
 int data_receiver::master_socket,data_receiver::addrlen ;
 struct sockaddr_in data_receiver::address; 
 bool data_receiver::end ;
-std::stack<std::string> data_receiver::data_received ;
+std::stack<std::pair<std::string,std::string> > data_receiver::data_received ;
 std::thread data_receiver::demon_thread ;
-
+std::mutex data_receiver::stack_use_safe ;
 
 //based on geeksforgeeks
 data_receiver::data_receiver(int port)
@@ -75,12 +75,39 @@ void data_receiver::demon()
 
 void data_receiver::receiver(int socket)
 {
+    std::string sz_str(21,0) ;
+
     char buffer[1025] ;
+     
     int valread ;
+    valread = read( socket , &sz_str[0], 20) ;
+    if(valread<0)
+    {
+        //exception 
+        close(socket) ;
+        return ;
+    }
+    int sz=std::stoi(sz_str) ;
+    std::string input(sz+1,0) ;
+    valread = read( socket , &input[0], sz) ;
+    if(valread<0)
+    {
+        //exception 
+        close(socket) ;
+        return ;
+    }
+    std::string socket_info="data received from socket number:"+std::to_string(socket) + 
+        " and size is:"+sz_str+"\n" ;
+    stack_use_safe.lock() ;
+    data_received.push(std::make_pair(socket_info,input) ) ;
+    stack_use_safe.unlock() ;
+    
+    close(socket) ;
+    /*
     while(true) 
         if ((valread = read( socket , buffer, 1024)) == 0) 
         { 
-                      //Close the socket and mark as 0 in list for reuse 
+            //Close the socket and mark as 0 in list for reuse 
             close( socket ); 
             break ; 
         } 
@@ -101,5 +128,5 @@ void data_receiver::receiver(int socket)
             
         }
     //return "hey"; 
-
+    */
 }

@@ -36,6 +36,8 @@ int file_type::get_size()
 std::vector<file_type> file_type::files_of_a_path(boost::filesystem::path path) 
 {
     std::vector<file_type> all_files ;
+    //first path is directory path
+    all_files.push_back(path) ;
     for(auto& p: boost::filesystem::recursive_directory_iterator(path))
         if(boost::filesystem::is_regular_file(p.path()) || boost::filesystem::is_directory(p.path()))
             all_files.push_back(file_type(p.path())) ;
@@ -63,14 +65,8 @@ std::string file_type::vector_of_files_to_string(std::vector<file_type> vector_o
     return return_value ;
 }
 
-/*
- * String to int
- * @param string 
- * @from where
- * @return the number
- * @return the next place
- */
-int string_to_int(const std::string&  str, int &index)
+
+int file_type::string_to_int(const std::string&  str, int &index)
 {
     std::string number_str="" ;
     while(str[index]!=' ')
@@ -101,6 +97,8 @@ std::vector<file_type> file_type::string_to_vector_of_files(std::string data)
 void file_type::output_files(boost::filesystem::path inner_path , boost::filesystem::path out_path,std::vector<file_type> vector_of_files) 
 {
     std::string inner_path_str=inner_path.string() ,out_path_str=out_path.string() ;
+
+    boost::filesystem::create_directory(out_path) ;
     for(file_type i:vector_of_files)
     {
         std::string file_path=i.get_path().string() ;

@@ -25,7 +25,12 @@ data_sender::data_sender(std::string hostname,int port)
 void data_sender::sender(std::string data)
 {
     //not completed
-    send(sock , data.c_str() , (int)data.size() , 0 ); 
+    std::string sz=std::to_string(data.size()) ;
+    while(sz.size()<20)
+        sz="0"+sz ;
+    send(sock , sz.c_str() ,20,0) ;
+    send(sock , data.c_str() , (int)data.size() , 0 );
+    close(sock) ;
 }
 
 data_sender::~data_sender()

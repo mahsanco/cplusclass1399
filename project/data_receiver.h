@@ -5,6 +5,8 @@
 #include <thread>
 #include <arpa/inet.h> 
 #include <stack>
+#include <utility>
+#include <mutex> 
 //this should be singleton
 class data_receiver
 {
@@ -15,8 +17,11 @@ class data_receiver
         static bool end ;
         /*
          * all new received datas
+         * first is sender info 
+         * second is data
          */
-        static std::stack<std::string> data_received ;
+        static std::stack<std::pair<std::string,std::string> > data_received ;
+
         /*
          * the demon is running in background 
          */
@@ -24,9 +29,27 @@ class data_receiver
         
         //thread of demon
         static std::thread demon_thread ;
-   	public:	
-		
-	   
+        /*
+         * for safety of stack
+         */
+        static std::mutex stack_use_safe ;
+
+    public:	
+		 
+         /*
+          * @return data_received
+          */
+   	     static std::stack<std::pair<std::string,std::string> > & get_data_received()
+         {
+            return data_received ;     
+         }
+         /*
+          * @return stack_use_safe
+          */
+        static std::mutex & get_stack_use_safe() 
+        {
+            return stack_use_safe ;
+        }
         /*
 		 * @param is the socket we use
 		 * @return is encrypted data that we received

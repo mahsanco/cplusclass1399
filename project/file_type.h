@@ -60,13 +60,27 @@ class file_type
          * @return a vector of file_type
          */
         static std::vector<file_type> string_to_vector_of_files(std::string data) ;
+
+        
+        /*
+         * String to int
+         * @param string 
+         * @param index :from where
+         * @return the number
+         * index will change to the next place
+         * for DeSerialization function
+         */
+        static int string_to_int(const std::string&  str, int &index) ;
+         
         /*
          * output the received files 
          * @ param inner_path is path of original directory
          * @ param out_path is path of new directory
          * @ param vector_of_files 
          */
-        static void output_files(boost::filesystem::path inner_path , boost::filesystem::path out_path,std::vector<file_type> vector_of_files) ; 
+        static void output_files(boost::filesystem::path inner_path , boost::filesystem::path out_path,std::vector<file_type> vector_of_files) ;
+
+            
 };
 
 #endif

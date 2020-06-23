@@ -9,21 +9,25 @@ class compress
 {
 
 	public:
-		
+		/*
+         * This library would decrease size of string
+         * To send to server
+         * I used gzip
+         */
 			
 		/*
-		 * Compress a path
-		 * @param path of file or folder
-		 * @return compressed file in one object
+		 * Compress a string
+		 * @param uncompressed string (this would be from Serialization)
+		 * @return compressed string
 		 */
-		static std::vector<file_type> compressor(boost::filesystem::path path) ;
+		static std::string compressor(std::string) ;
 		
 		/*
-		 * Decompress a group of files in path
-		 * @param object_of_files is our files
-		 * @param path is a path that we put our files there
+		 * Decompress a string
+		 * @param compressed string
+		 * @return uncompressed string
 		 */
-		static void decompress(std::vector<file_type> &object_of_files,boost::filesystem::path path) ;
+		static std::string decompress(std::string) ;
 		
         /*
 		 * Constructor
