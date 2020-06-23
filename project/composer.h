@@ -2,35 +2,38 @@
 #define _COMPOSER_H_
 
 
-#include <boost/filesystem.hpp>
-#include <vector>
-#include "file_type.h"
+#include <string>
 class compress
 {
 
-	public:
-		
-			
-		/*
-		 * Compress a path
-		 * @param path of file or folder
-		 * @return compressed file in one object
-		 */
-		static std::vector<file_type> compressor(boost::filesystem::path path) ;
-		
-		/*
-		 * Decompress a group of files in path
-		 * @param object_of_files is our files
-		 * @param path is a path that we put our files there
-		 */
-		static void decompress(std::vector<file_type> &object_of_files,boost::filesystem::path path) ;
-		
+    public:
         /*
-		 * Constructor
-		 */
-		compress() ;
+         * This library would decrease size of string.
+         * To send to server.
+         * I will use an okay method that i made!
+         * the size would be the same or less.
+         */
 
-	private:
+        /*
+         * Compress a string
+         * @param uncompressed string (this would be from Serialization)
+         * @return compressed string
+         */
+        static std::string compressor(std::string) ;
+
+        /*
+         * Decompress a string
+         * @param compressed string
+         * @return uncompressed string
+         */
+        static std::string decompress(std::string) ;
+
+        /*
+         * Constructor
+         */
+        compress() ;
+
+    private:
 
 };
 

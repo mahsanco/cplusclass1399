@@ -2,32 +2,30 @@
 #define _ENCRYPTION_H_
 
 #include <string>
-#include <vector>
-#include "file_type.h"
 
 class encryption
 {
-	public:
-		
-		/*
-		 * Encrypt group of files
-		 * @param group of files that would be encrypted
-		 * @return a strign that represent files
-		 */
-		static std::string encrypt(std::vector<file_type> files) ;
+    public:
 
-		/*
+        /*
+         * Encrypt group of files
+         * @param group of files that would be encrypted
+         * @return a string that represent files
+         */
+        static std::string encrypt(std::string) ;
+
+        /*
          * Decrypt a string
-		 * @param an encrypted string
-		 * @return group of files
-		 */
-		static std::vector<file_type> encrypt(std::string files) ;
-		
-		/*
-		 * Constructor
-		 */
-		encryption() ;
-	
+         * @param an encrypted string
+         * @return decrypted string
+         */
+        static std::string decrypt(std::string) ;
+
+        /*
+         * Constructor
+         */
+        encryption() ;
+
     private:
 };
 
