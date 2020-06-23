@@ -2,6 +2,7 @@
 #include "data_sender.h"
 #include "file_type.h"
 #include "composer.h"
+#include "encryption.h"
 #include <iostream>
 int main()
 {
@@ -15,7 +16,7 @@ int main()
                 )
             ) ;
         data_sender send_for_now("127.0.0.1",8888) ;
-        std::string compressed_str=compress::compressor(sending) ;
+        std::string compressed_str=compress::compressor(encryption::encrypt(sending)) ;
         send_for_now.sender(compressed_str) ;
     }
     else
@@ -32,7 +33,8 @@ int main()
                 std::cout<<last_one.first<<std::endl ;
 
                 std::string decompressed_str=compress::decompress(last_one.second) ;
-                std::vector<file_type> receiving=file_type::string_to_vector_of_files(decompressed_str) ;
+                std::string decrypted_str=encryption::decrypt(decompressed_str) ;
+                std::vector<file_type> receiving=file_type::string_to_vector_of_files(decrypted_str) ;
                 int c=0 ;
                 for (file_type f:receiving)
                 {
