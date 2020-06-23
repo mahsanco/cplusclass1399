@@ -10,6 +10,7 @@
 #include <unistd.h>
 #include <string.h>
 #include <stdlib.h>
+#include "exception.h"
 
 #define  UNSUCCESSFUL -1
 #define  BUFFER_SIZE 1024
@@ -20,11 +21,11 @@ private:
   int valread;
   struct sockaddr_in server_address;
   int port;
-  char buffer[1024];
+  char buffer[BUFFER_SIZE];
 
-  bool socket_creation(); // Creating socket
-  bool convert_address_text_to_binary();  // Convert IPv4 and IPv6 addresses from text to binary form
-  bool connect_server();
+  bool is_socket_created(); // Creating socket
+  bool has_address_converted_text_to_binary();  // Convert IPv4 and IPv6 addresses from text to binary form
+  bool is_connect_server();
   void send_filename(std::string);  // send filename
 
 public:

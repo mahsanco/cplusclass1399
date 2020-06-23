@@ -10,6 +10,7 @@
 #include <stdlib.h>
 #include <netinet/in.h>
 #include <string.h>
+#include "exception.h"
 
 #define  BUFFER_SIZE 1024
 
@@ -22,7 +23,7 @@ private:
   struct sockaddr_in address;
   int opt;
 	int addrlen;
-	char buffer[1024];
+	char buffer[BUFFER_SIZE];
 
   void socket_creation(); // Creating socket file descriptor
   void force_attach_socket_to_port(); // Forcefully attaching socket to the port

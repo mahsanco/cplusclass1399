@@ -5,17 +5,16 @@ FileSender::FileSender(int port_number) {
   port = port_number;
   for (int index = 0; index < BUFFER_SIZE; index++)
     buffer[index] = 0;
-    if (!socket_creation())
-      throw UNSUCCESSFUL;
-    if (!convert_address_text_to_binary())
-      throw UNSUCCESSFUL;
-    if (!connect_server())
-      throw UNSUCCESSFUL;
+    if (!is_socket_created())
+      throw SocketCreationError();
+    if (!has_address_converted_text_to_binary())
+      throw InvalidAddress();
+    if (!is_connect_server())
+      throw ConnectionFailed();
 }
 
-bool FileSender::socket_creation() {
+bool FileSender::is_socket_created() {
   if ((sock = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
-		std::cout << "Socket creation error" << std::endl;
 		return false;
 	} else {
     server_address.sin_family = AF_INET;
@@ -24,16 +23,14 @@ bool FileSender::socket_creation() {
   }
 }
 
-bool FileSender::convert_address_text_to_binary() {
+bool FileSender::has_address_converted_text_to_binary() {
   if (inet_pton(AF_INET, "127.0.0.1", &server_address.sin_addr) <= 0) {
-		std::cout << "Invalid address / Address not supported" << std::endl;
 		return false;
   } else return true;
 }
 
-bool FileSender::connect_server() {
+bool FileSender::is_connect_server() {
   if (connect(sock,(struct sockaddr *)&server_address, sizeof(server_address)) < 0) {
-		std::cout << "Connection Failed" << std::endl;
 		return false;
 	} else {
 		std::cout << "Connection Successful" << std::endl;
