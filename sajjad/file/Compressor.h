@@ -32,11 +32,11 @@ private:
     std::string m_input; ///< keeps path of input file
     std::string m_output; ///< keeps path of output file
 
-    static void putVecToFile(const std::string &m_output, const std::vector<int> &output_code) ;
+    static void put_vector_to_file(const std::string &path, const std::vector<int> &output_code) ;
 
-    static std::vector<unsigned char> intToBytes(int paramInt) ;
+    static std::vector<unsigned char> int_to_bytes(int paramInt) ;
 
-    static std::vector<int> putFileToVec(const std::string &aa) ;
+    static std::vector<int> put_file_to_vector(const std::string &file_path) ;
 
 public:
     /**

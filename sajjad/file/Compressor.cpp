@@ -5,37 +5,38 @@
 
 using namespace std;
 
-vector<int> Compressor::putFileToVec(const string &aa) {
-    vector<int> b;
+vector<int> Compressor::put_file_to_vector(const string &file_path) {
+    vector<int> result;
 
-    ifstream myfile(aa);
+    ifstream myfile(file_path);
     if (!myfile.is_open()) {
-        return b; //unable to open file
+        return result; //unable to open file
     }
-    unsigned char q0, q1, q2, q3;
+    unsigned char c0, c1, c2, c3;
     myfile >> noskipws;
-    while (myfile >> q0) {
-        myfile >> q1;
-        myfile >> q2;
-        myfile >> q3;
-        int num = (int) (q0 << 24 | q1 << 16 | q2 << 8 | q3);
-        b.push_back(num);
+    while (myfile >> c0) {
+        myfile >> c1;
+        myfile >> c2;
+        myfile >> c3;
+        int num = (int) (c0 << 24 | c1 << 16 | c2 << 8 | c3);
+        result.push_back(num);
     }
-    return b;
+    return result;
 }
 
-vector<unsigned char> Compressor::intToBytes(int paramInt) {
-    vector<unsigned char> arrayOfByte(4);
-    for (int i = 0; i < 4; i++)
-        arrayOfByte[3 - i] = (paramInt >> (i * 8));
+vector<unsigned char> Compressor::int_to_bytes(int paramInt) {
+    int size_of_int = sizeof(int);
+    vector<unsigned char> arrayOfByte(size_of_int);
+    for (int i = 0; i < size_of_int; i++)
+        arrayOfByte[size_of_int - 1 - i] = (paramInt >> (i * 8));
     return arrayOfByte;
 }
 
-void Compressor::putVecToFile(const string &path, const vector<int> &output_code) {
+void Compressor::put_vector_to_file(const string &path, const vector<int> &output_code) {
     ofstream myFileForOut;
     myFileForOut.open(path);
     for (int i = 0; i < output_code.size(); i++) {
-        vector<unsigned char> byteArr = intToBytes(output_code[i]);
+        vector<unsigned char> byteArr = int_to_bytes(output_code[i]);
         myFileForOut << byteArr[0];
         myFileForOut << byteArr[1];
         myFileForOut << byteArr[2];
@@ -57,7 +58,7 @@ bool Compressor::compress() noexcept {
         table[ch] = i;
     }
 
-    string s1 = "";
+    string input_str = "";
     unsigned char nextChar;
     ifstream myFile(m_input);
     myFile >> std::noskipws;
@@ -65,35 +66,35 @@ bool Compressor::compress() noexcept {
         return false; // Unable to open file
     }
     while (myFile >> nextChar)
-        s1 += nextChar;
+        input_str += nextChar;
     myFile.close();
-    string p = "", c = "";
-    p += s1[0];
+    string repeated_str = "", next_str = "";
+    repeated_str += input_str[0];
     int code = 256;
     vector<int> output_code;
 
-    for (int i = 0; i < s1.length(); i++) {
-        if (i != s1.length() - 1)
-            c += s1[i + 1];
-        if (table.find(p + c) != table.end()) {
-            p = p + c;
+    for (int i = 0; i < input_str.length(); i++) {
+        if (i != input_str.length() - 1)
+            next_str += input_str[i + 1];
+        if (table.find(repeated_str + next_str) != table.end()) {
+            repeated_str = repeated_str + next_str;
         } else {
-            output_code.push_back(table[p]);
-            table[p + c] = code;
+            output_code.push_back(table[repeated_str]);
+            table[repeated_str + next_str] = code;
             code++;
-            p = c;
+            repeated_str = next_str;
         }
-        c = "";
+        next_str = "";
     }
-    output_code.push_back(table[p]);
+    output_code.push_back(table[repeated_str]);
 
-    putVecToFile(m_output, output_code);
+    put_vector_to_file(m_output, output_code);
 
     return true;
 }
 
 bool Compressor::decompress() noexcept {
-    vector<int> op = putFileToVec(m_input);
+    vector<int> output_vector = put_file_to_vector(m_input);
 
     ofstream myFileForOutput;
     myFileForOutput.open(m_output);
@@ -104,25 +105,26 @@ bool Compressor::decompress() noexcept {
         ch += char(i);
         table[i] = ch;
     }
-    int old = op[0], n;
-    string s = table[old];
-    string c = "";
-    c += s[0];
-    myFileForOutput << s;
+    int old = output_vector[0], n;
+    string repeated_str = table[old];
+    string next_str = "";
+    next_str += repeated_str[0];
+    myFileForOutput << repeated_str;
 
     int count = 256;
-    for (int i = 0; i < op.size() - 1; i++) {
-        n = op[i + 1];
+    for (int i = 0; i < output_vector.size() - 1; i++) {
+
+        n = output_vector[i + 1];
         if (table.find(n) == table.end()) {
-            s = table[old];
-            s = s + c;
+            repeated_str = table[old];
+            repeated_str = repeated_str + next_str;
         } else {
-            s = table[n];
+            repeated_str = table[n];
         }
-        myFileForOutput << s;
-        c = "";
-        c += s[0];
-        table[count] = table[old] + c;
+        myFileForOutput << repeated_str;
+        next_str = "";
+        next_str += repeated_str[0];
+        table[count] = table[old] + next_str;
         count++;
         old = n;
     }
