@@ -1,6 +1,7 @@
 #include "data_receiver.h"
 #include "data_sender.h"
 #include "file_type.h"
+#include "composer.h"
 #include <iostream>
 int main()
 {
@@ -8,14 +9,14 @@ int main()
     std::cin>>way ;
     if(way)
     {
-        boost::filesystem::path pa=("/home/amirreza/Desktop/sajad_project/cplusclass1399/.git/logs/refs") ;
         std::string sending=file_type::vector_of_files_to_string(
             file_type::files_of_a_path(
                 boost::filesystem::path("/home/amirreza/Desktop/sajad_project/cplusclass1399/.git/logs/refs")
                 )
             ) ;
         data_sender send_for_now("127.0.0.1",8888) ;
-        send_for_now.sender(sending) ;
+        std::string compressed_str=compress::compressor(sending) ;
+        send_for_now.sender(compressed_str) ;
     }
     else
     {
@@ -29,7 +30,9 @@ int main()
                 std::pair<std::string,std::string> last_one=data_receiver::get_data_received().top() ;
                 data_receiver::get_data_received().pop() ;
                 std::cout<<last_one.first<<std::endl ;
-                std::vector<file_type> receiving=file_type::string_to_vector_of_files(last_one.second) ;
+
+                std::string decompressed_str=compress::decompress(last_one.second) ;
+                std::vector<file_type> receiving=file_type::string_to_vector_of_files(decompressed_str) ;
                 int c=0 ;
                 for (file_type f:receiving)
                 {

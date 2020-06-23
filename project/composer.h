@@ -2,17 +2,16 @@
 #define _COMPOSER_H_
 
 
-#include <boost/filesystem.hpp>
-#include <vector>
-#include "file_type.h"
+#include <string>
 class compress
 {
 
 	public:
 		/*
-         * This library would decrease size of string
-         * To send to server
-         * I used gzip
+         * This library would decrease size of string.
+         * To send to server.
+         * I will use an okay method that i made!
+         * the size would be the same or less.
          */
 			
 		/*
