@@ -7,7 +7,7 @@ file_type::file_type(boost::filesystem::path construct_path )
 {
     this->path=construct_path ;
     if(boost::filesystem::is_directory(construct_path))
-        
+
     {
         size=0 ;
         data="" ;
@@ -19,12 +19,12 @@ file_type::file_type(boost::filesystem::path construct_path )
         data=std::string((std::istreambuf_iterator<char>(file)), std::istreambuf_iterator<char>());
     }   
 }	
-			
+
 std::string const& file_type::get_data() 
 {
     return data ;
 }
-	
+
 boost::filesystem::path const& file_type::get_path() 
 {
     return path ;
@@ -91,7 +91,7 @@ std::vector<file_type> file_type::string_to_vector_of_files(std::string data)
         return_value.push_back(file_type(file_path,file_data,size_of_data)) ;
     }
     return return_value ;
-    
+
 }
 
 void file_type::output_files(boost::filesystem::path inner_path , boost::filesystem::path out_path,std::vector<file_type> vector_of_files) 

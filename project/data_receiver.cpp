@@ -24,12 +24,14 @@ data_receiver::data_receiver(int port)
     master_socket = socket(AF_INET , SOCK_STREAM , 0) ;
     if(master_socket==0)
     {
-        //exception 
+        //exception         
+        return ; 
     } 
     int opt=true ;
     if( setsockopt(master_socket, SOL_SOCKET, SO_REUSEADDR, (char *)&opt,  sizeof(opt)) < 0 ) 
     {
-        //exception 
+        //exception         
+        return ; 
     }
     address.sin_family = AF_INET; 
     address.sin_addr.s_addr = INADDR_ANY; 
@@ -37,10 +39,12 @@ data_receiver::data_receiver(int port)
 
     if (bind(master_socket, (struct sockaddr *)&address, sizeof(address))<0) 
     { 
-        //exception 		
+        //exception         
+        return ; 		
     } 
     if (listen(master_socket, 3) < 0) 
     { 
+        //exception         
         perror("listen"); 
         exit(EXIT_FAILURE); 
     } 
@@ -64,7 +68,7 @@ void data_receiver::demon()
         int new_socket=accept(master_socket,(struct sockaddr *)& address,(socklen_t*) &addrlen) ;
         if(new_socket<0)
         {
-            //exception 
+            return ; 
         }
         else
             all_runnings.push_back(std::thread(receiver,new_socket)) ;
@@ -77,8 +81,6 @@ void data_receiver::receiver(int socket)
 {
     std::string sz_str(21,0) ;
 
-    char buffer[1025] ;
-     
     int valread ;
     valread = read( socket , &sz_str[0], 20) ;
     if(valread<0)
@@ -101,32 +103,7 @@ void data_receiver::receiver(int socket)
     stack_use_safe.lock() ;
     data_received.push(std::make_pair(socket_info,input) ) ;
     stack_use_safe.unlock() ;
-    
-    close(socket) ;
-    /*
-    while(true) 
-        if ((valread = read( socket , buffer, 1024)) == 0) 
-        { 
-            //Close the socket and mark as 0 in list for reuse 
-            close( socket ); 
-            break ; 
-        } 
 
-    //Echo back the message that came in 
-        else
-        { 
-            //set the string terminating NULL byte on the end 
-            //of the data read 
-            std::cout<<buffer<<" " <<socket<<std::endl ;
-            buffer[valread] = '\0'; 
-            if(std::string(buffer)=="close")
-            {
-                close(socket) ;
-                break ;
-            }
-            send(socket , buffer , strlen(buffer) , 0 );
-            
-        }
-    //return "hey"; 
-    */
+    close(socket) ;
+
 }

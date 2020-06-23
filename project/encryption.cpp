@@ -22,9 +22,9 @@ std::string encryption::encrypt(std::string plaintext)
     CryptoPP::StreamTransformationFilter stfEncryptor(cbcEncryption, new CryptoPP::StringSink( ciphertext ) );
     stfEncryptor.Put( reinterpret_cast<const unsigned char*>( plaintext.c_str() ), plaintext.length() + 1 );
     stfEncryptor.MessageEnd();
-    
+
     return ciphertext ;
-    
+
 }
 
 
@@ -32,11 +32,11 @@ std::string encryption::decrypt(std::string ciphertext)
 {
     std::string decryptedtext;
     ciphertext.pop_back() ;
-    
+
     byte key[ CryptoPP::AES::DEFAULT_KEYLENGTH ], iv[ CryptoPP::AES::BLOCKSIZE ];
     memset( key, 0x54, CryptoPP::AES::DEFAULT_KEYLENGTH );
     memset( iv, 0x00, CryptoPP::AES::BLOCKSIZE );
-    
+
 
     CryptoPP::AES::Decryption aesDecryption(key, CryptoPP::AES::DEFAULT_KEYLENGTH);
     CryptoPP::CBC_Mode_ExternalCipher::Decryption cbcDecryption( aesDecryption, iv );
@@ -47,6 +47,6 @@ std::string encryption::decrypt(std::string ciphertext)
 
 
     return decryptedtext ;
-        
-        
+
+
 }

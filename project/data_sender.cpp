@@ -4,27 +4,26 @@
 data_sender::data_sender(std::string hostname,int port) 
 {
     sock = socket(AF_INET, SOCK_STREAM, 0) ; 
-	if(sock<0)
+    if(sock<0)
     {
-       //exception 
-	} 
+        //exception 
+    } 
 
-	serv_addr.sin_family = AF_INET; 
-	serv_addr.sin_port = htons(port); 
+    serv_addr.sin_family = AF_INET; 
+    serv_addr.sin_port = htons(port); 
 
     if(inet_pton(AF_INET,hostname.c_str() , &serv_addr.sin_addr)<=0) 
-	{ 
+    { 
         //exception    
     } 
     if (connect(sock, (struct sockaddr *)&serv_addr, sizeof(serv_addr)) < 0) 
-	{ 
-		//exception  
-	}   
+    { 
+        //exception  
+    }   
 }
 
 void data_sender::sender(std::string data)
 {
-    //not completed
     std::string sz=std::to_string(data.size()) ;
     while(sz.size()<20)
         sz="0"+sz ;

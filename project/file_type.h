@@ -6,47 +6,47 @@
 #include <vector>
 class file_type
 {
-	private :
-	
+    private :
+
         ///Path of file
-		boost::filesystem::path path ;
+        boost::filesystem::path path ;
 
         ///Data of file 
         std::string data ;
 
         ///Size of file
         int size ;		
-         
+
     public:
-	
-		/*
-		 * @param is path of file
-		 */
-		file_type(boost::filesystem::path path ) ;
-        
+
+        /*
+         * @param is path of file
+         */
+        file_type(boost::filesystem::path path ) ;
+
         file_type(boost::filesystem::path path,std::string data,int size ):path(path),data(data),size(size){ } 
 
-		/*
-		 * @return data of file
-		 */
-		std::string const& get_data() ;
-		
-		/*
-		 * @return path of file
-		 */
-		boost::filesystem::path const& get_path() ;
-		
-		/*
-		 * @return size of file
-		 */
+        /*
+         * @return data of file
+         */
+        std::string const& get_data() ;
+
+        /*
+         * @return path of file
+         */
+        boost::filesystem::path const& get_path() ;
+
+        /*
+         * @return size of file
+         */
         int get_size();
-        
+
         /*
          * @param is path of file
          * @return all files in that directory
          */
         static std::vector<file_type> files_of_a_path(boost::filesystem::path path) ;
-        
+
         /*
          * Serialization
          * @param is vector of file_type objects
@@ -61,7 +61,7 @@ class file_type
          */
         static std::vector<file_type> string_to_vector_of_files(std::string data) ;
 
-        
+
         /*
          * String to int
          * @param string 
@@ -71,7 +71,7 @@ class file_type
          * for DeSerialization function
          */
         static int string_to_int(const std::string&  str, int &index) ;
-         
+
         /*
          * output the received files 
          * @ param inner_path is path of original directory
@@ -80,7 +80,7 @@ class file_type
          */
         static void output_files(boost::filesystem::path inner_path , boost::filesystem::path out_path,std::vector<file_type> vector_of_files) ;
 
-            
+
 };
 
 #endif
