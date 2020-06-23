@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall -g -std=c++17  -rdynamic CMakeFiles/CMakeTutorial.dir/src/main.cpp.o  -o CMakeTutorial 
