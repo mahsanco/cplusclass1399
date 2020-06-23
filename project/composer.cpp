@@ -1,4 +1,9 @@
 #include "composer.h"
+/**
+ * This library is gonna compress and decompress a string 
+ * Compressor find each repetitive countinious character 
+ * And change them to a char + number of repeats
+ */
 std::string compress::compressor(std::string input)
 {
     std::string return_value="" ;

@@ -17,7 +17,11 @@ std::stack<std::pair<std::string,std::string> > data_receiver::data_received ;
 std::thread data_receiver::demon_thread ;
 std::mutex data_receiver::stack_use_safe ;
 
-//based on geeksforgeeks
+/*
+ * TODO:
+ * open a master socket on a port
+ * then run a demon in background to find new connections
+ */
 data_receiver::data_receiver(int port)
 {
     end=false ;
@@ -60,6 +64,11 @@ data_receiver::~data_receiver()
 {
     demon_thread.join() ;
 }
+/**
+ * TODO:
+ * search for new connections constantly
+ * and then add a new socket
+ */
 void data_receiver::demon()
 {
     std::vector<std::thread> all_runnings ;
@@ -76,7 +85,13 @@ void data_receiver::demon()
     for(auto &i:all_runnings)
         i.join() ;
 }
-
+/**
+ * TODO:
+ * Receive file from socket 
+ * First get size of the data and then get the data itself 
+ * And add the inout to stack 
+ * And close the socket
+ */
 void data_receiver::receiver(int socket)
 {
     std::string sz_str(21,0) ;

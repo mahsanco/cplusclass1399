@@ -4,6 +4,18 @@
 #include "composer.h"
 #include "encryption.h"
 #include <iostream>
+/**
+ * TODO:
+ * If user entered 0 
+ * Go to server mode otherwise goto client mode 
+ * Server mode:
+ * Download all input datas into /home/sajad_download
+ * First decompress data and the decrypte it
+ * CLient mode:
+ * Get directory and host 
+ * then send the directory 
+ * First encrypt data and then compress it
+ */
 int main()
 {
     int way ;

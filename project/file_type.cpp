@@ -44,14 +44,16 @@ std::vector<file_type> file_type::files_of_a_path(boost::filesystem::path path)
     return all_files ;
 
 }
-
+/*
+ * TODO:
+ * Make a string from vector<file_type>
+ * Format:size_of_vector+' ' + each file_type(file 0+file 1+... file n-1)
+ * Each file_type format:
+ * Size of data + ' ' + data +size of path + ' ' +path 
+ */
 std::string file_type::vector_of_files_to_string(std::vector<file_type> vector_of_files) 
 {
-    /*
-     * format:size_of_vector+' ' + each file_type(file 0+file 1+... file n-1)
-     * each file_type format:
-     * size of data + ' ' + data +size of path + ' ' +path 
-     */
+
     std::string return_value="" ;
     return_value+=std::to_string(vector_of_files.size())+' ' ;
     for(file_type i:vector_of_files)
@@ -74,7 +76,13 @@ int file_type::string_to_int(const std::string&  str, int &index)
     index++ ;
     return std::stoi(number_str) ;
 }
-
+/*
+ * TODO:
+ * Change a Serialized string back to the vector<file_type>
+ * Format:size_of_vector+' ' + each file_type(file 0+file 1+... file n-1)
+ * Each file_type format:
+ * Size of data + ' ' + data +size of path + ' ' +path 
+ */
 std::vector<file_type> file_type::string_to_vector_of_files(std::string data) 
 {
     int index=0 ;
@@ -93,7 +101,12 @@ std::vector<file_type> file_type::string_to_vector_of_files(std::string data)
     return return_value ;
 
 }
-
+/*
+ * TODO:
+ * Output all files into out_path
+ * If it's a file copy the file
+ * And if it's a directory create it
+ */
 void file_type::output_files(boost::filesystem::path inner_path , boost::filesystem::path out_path,std::vector<file_type> vector_of_files) 
 {
     std::string inner_path_str=inner_path.string() ,out_path_str=out_path.string() ;

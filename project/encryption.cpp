@@ -4,8 +4,11 @@
 #include "cryptopp/modes.h"
 #include "cryptopp/aes.h"
 #include "cryptopp/filters.h"
-//used a crypto++ AES encryptor
-
+/*
+ * TODO :
+ * This library encrypt our text with AES method
+ * key=0X54 
+ */
 std::string encryption::encrypt(std::string plaintext)
 {
     std::string ciphertext ;
