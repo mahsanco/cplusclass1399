@@ -15,18 +15,18 @@ using namespace std;
  * AddRoundKey is simply an XOR of a 128-bit block with the 128-bit key.
  */
 void AddRoundKey(unsigned char * state, unsigned char * roundKey) {
-	for (int i = 0; i < 16; i++) {
+	for (int i = 0; i < 16; i++) 
 		state[i] ^= roundKey[i];
-	}
+	
 }
 
 /* Perform substitution to each of the 16 bytes
  * Uses S-box as lookup table 
  */
 void SubBytes(unsigned char * state) {
-	for (int i = 0; i < 16; i++) {
+	for (int i = 0; i < 16; i++) 
 		state[i] = s[state[i]];
-	}
+	
 }
 
 // Shift left, adds diffusion
@@ -57,9 +57,9 @@ void ShiftRows(unsigned char * state) {
 	tmp[14] = state[6];
 	tmp[15] = state[11];
 
-	for (int i = 0; i < 16; i++) {
+	for (int i = 0; i < 16; i++) 
 		state[i] = tmp[i];
-	}
+	
 }
 
  /* MixColumns uses mul2, mul3 look-up tables
@@ -88,9 +88,9 @@ void MixColumns(unsigned char * state) {
 	tmp[14] = (unsigned char)state[12] ^ state[13] ^ mul2[state[14]] ^ mul3[state[15]];
 	tmp[15] = (unsigned char)mul3[state[12]] ^ state[13] ^ state[14] ^ mul2[state[15]];
 
-	for (int i = 0; i < 16; i++) {
+	for (int i = 0; i < 16; i++) 
 		state[i] = tmp[i];
-	}
+	
 }
 
 /* Each round operates on 128 bits at a time
@@ -116,24 +116,24 @@ void FinalRound(unsigned char * state, unsigned char * key) {
 void AESEncrypt(unsigned char * message, unsigned char * expandedKey, unsigned char * encryptedMessage) {
 	unsigned char state[16]; // Stores the first 16 bytes of original message
 
-	for (int i = 0; i < 16; i++) {
+	for (int i = 0; i < 16; i++) 
 		state[i] = message[i];
-	}
+	
 
 	int numberOfRounds = 9;
 
 	AddRoundKey(state, expandedKey); // Initial round
 
-	for (int i = 0; i < numberOfRounds; i++) {
+	for (int i = 0; i < numberOfRounds; i++) 
 		Round(state, expandedKey + (16 * (i+1)));
-	}
+	
 
 	FinalRound(state, expandedKey + 160);
 
 	// Copy encrypted state to buffer
-	for (int i = 0; i < 16; i++) {
+	for (int i = 0; i < 16; i++) 
 		encryptedMessage[i] = state[i];
-	}
+	
 }
 
 int main() {
@@ -177,18 +177,18 @@ for(int j=0 ; j<length;j++)
 
 	int paddedMessageLen = originalLen;
 
-	if ((paddedMessageLen % 16) != 0) {
+	if ((paddedMessageLen % 16) != 0) 
 		paddedMessageLen = (paddedMessageLen / 16 + 1) * 16;
-	}
+	
 
 	unsigned char * paddedMessage = new unsigned char[paddedMessageLen];
 	for (int i = 0; i < paddedMessageLen; i++) {
-		if (i >= originalLen) {
+		if (i >= originalLen) 
 			paddedMessage[i] = 0;
-		}
-		else {
+		
+		else 
 			paddedMessage[i] = message[i];
-		}
+		
 	}
 
 	unsigned char * encryptedMessage = new unsigned char[paddedMessageLen];
@@ -219,9 +219,9 @@ for(int j=0 ; j<length;j++)
 
 	KeyExpansion(key, expandedKey);
 
-	for (int i = 0; i < paddedMessageLen; i += 16) {
+	for (int i = 0; i < paddedMessageLen; i += 16) 
 		AESEncrypt(paddedMessage+i, expandedKey, encryptedMessage+i);
-	}
+	
 
 //	cout << "Encrypted message in hex:" << endl;
 //	for (int i = 0; i < paddedMessageLen; i++) {

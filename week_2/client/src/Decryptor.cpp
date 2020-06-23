@@ -15,9 +15,9 @@ using namespace std;
  * So basically does the same as AddRoundKey in the encryption
  */
 void SubRoundKey(unsigned char * state, unsigned char * roundKey) {
-	for (int i = 0; i < 16; i++) {
+	for (int i = 0; i < 16; i++) 
 		state[i] ^= roundKey[i];
-	}
+	
 }
 
 /* InverseMixColumns uses mul9, mul11, mul13, mul14 look-up tables
@@ -46,9 +46,9 @@ void InverseMixColumns(unsigned char * state) {
 	tmp[14] = (unsigned char)mul13[state[12]] ^ mul9[state[13]] ^ mul14[state[14]] ^ mul11[state[15]];
 	tmp[15] = (unsigned char)mul11[state[12]] ^ mul13[state[13]] ^ mul9[state[14]] ^ mul14[state[15]];
 
-	for (int i = 0; i < 16; i++) {
+	for (int i = 0; i < 16; i++) 
 		state[i] = tmp[i];
-	}
+	
 }
 
 // Shifts rows right (rather than left) for decryption
@@ -79,18 +79,18 @@ void ShiftRows(unsigned char * state) {
 	tmp[14] = state[6];
 	tmp[15] = state[3];
 
-	for (int i = 0; i < 16; i++) {
+	for (int i = 0; i < 16; i++) 
 		state[i] = tmp[i];
-	}
+	
 }
 
 /* Perform substitution to each of the 16 bytes
  * Uses inverse S-box as lookup table
  */
 void SubBytes(unsigned char * state) {
-	for (int i = 0; i < 16; i++) { // Perform substitution to each of the 16 bytes
+	for (int i = 0; i < 16; i++) // Perform substitution to each of the 16 bytes
 		state[i] = inv_s[state[i]];
-	}
+	
 }
 
 /* Each round operates on 128 bits at a time
@@ -118,24 +118,24 @@ void AESDecrypt(unsigned char * encryptedMessage, unsigned char * expandedKey, u
 {
 	unsigned char state[16]; // Stores the first 16 bytes of encrypted message
 
-	for (int i = 0; i < 16; i++) {
+	for (int i = 0; i < 16; i++) 
 		state[i] = encryptedMessage[i];
-	}
+	
 
 	InitialRound(state, expandedKey+160);
 
 	int numberOfRounds = 9;
 
-	for (int i = 8; i >= 0; i--) {
+	for (int i = 8; i >= 0; i--) 
 		Round(state, expandedKey + (16 * (i + 1)));
-	}
+	
 
 	SubRoundKey(state, expandedKey); // Final round
 
 	// Copy decrypted state to buffer
-	for (int i = 0; i < 16; i++) {
+	for (int i = 0; i < 16; i++) 
 		decryptedMessage[i] = state[i];
-	}
+	
 }
 
 int main() {
@@ -169,9 +169,9 @@ int main() {
 	int n = strlen((const char*)msg);
 
 	unsigned char * encryptedMessage = new unsigned char[n];
-	for (int i = 0; i < n; i++) {
+	for (int i = 0; i < n; i++) 
 		encryptedMessage[i] = (unsigned char)msg[i];
-	}
+	
 
 	// Free memory
 	delete[] msg;
@@ -208,9 +208,9 @@ int main() {
 
 	unsigned char * decryptedMessage = new unsigned char[messageLen];
 
-	for (int i = 0; i < messageLen; i += 16) {
+	for (int i = 0; i < messageLen; i += 16) 
 		AESDecrypt(encryptedMessage + i, expandedKey, decryptedMessage + i);
-	}
+	
 
 //	cout << "Decrypted message in hex:" << endl;
 //	for (int i = 0; i < messageLen; i++) {
@@ -220,9 +220,9 @@ int main() {
 	cout << endl;
 //	cout << "Decrypted message: ";
 
-	for (int i = 0; i < messageLen; i++) {
+	for (int i = 0; i < messageLen; i++) 
 		cout << decryptedMessage[i];
-	}
+	
 	cout << endl;
 
 	return 0;
