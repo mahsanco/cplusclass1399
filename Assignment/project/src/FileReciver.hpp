@@ -25,7 +25,6 @@ private :
     /// Keeps the data of recived file
     std::vector <std::string> file_data;
 
-
 public :
 
     /// Make server

@@ -12,7 +12,9 @@
 #include <vector>
 #include <sstream>
 #include <fstream>
+#include <string.h>
 #include "Exceptions.hpp"
+#include "Encrypt.hpp"
 
 
 class FileSender
@@ -22,6 +24,7 @@ private :
     /// Keeps the name of recived file to sending
     std::string file_name;
 
+    Encrypt *encrypt;
 
 public :
 

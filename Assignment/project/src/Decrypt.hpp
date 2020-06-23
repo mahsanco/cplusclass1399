@@ -9,7 +9,12 @@
 
 #include <iostream>
 #include <string>
+#include <cstring>
+#include <fstream>
+#include <sstream>
 #include "Encryptor.hpp"
+#include "structures.hpp"
+
 
 class Decrypt : public Encryptor
 {
@@ -17,18 +22,12 @@ private :
 
 public :
 
-    Decrypt(std::string _file_name);
+    Decrypt();
     
     ~Decrypt();
-
-    /// Reads the data in the received directory
-    std::string read_file_data(); 
     
     /// Decrypt the data in the received directory
-    std::string encrypt_file_input(); 
-    
-     /// Sends the Decrypted result
-    void send_encrypted();
+    std::string decrypt_file_input(char input[1024]); 
 	
 };
 

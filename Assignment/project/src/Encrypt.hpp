@@ -8,8 +8,12 @@
 #define _Encrypt_ 
 
 #include <iostream>
+#include <cstring>
+#include <fstream>
+#include <sstream>
 #include <string>
 #include "Encryptor.hpp"
+#include "structures.hpp"
 
 class Encrypt : public Encryptor
 {
@@ -17,18 +21,12 @@ private :
 
 public :
 
-    Encrypt(std::string _file_name);
+    Encrypt();
     
     ~Encrypt();
-
-     /// Reads the data in the received directory
-    std::string read_file_data();
     
     /// Encrypt the data in the received directory
-    std::string encrypt_file_input(); 
-    
-    /// Sends the encrypted result
-    void send_encrypted(); 
+    std::string encrypt_file_input(char input[1024]); 
 	
 };
 

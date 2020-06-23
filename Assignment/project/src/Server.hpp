@@ -14,6 +14,8 @@
 #include <netinet/in.h> 
 #include <string.h> 
 #include "FileReciver.hpp"
+#include "Encryptor.hpp"
+#include "Decrypt.hpp"
 
 #define PORT 8080 
 #define IP_PROTOCOL 0 
@@ -31,6 +33,8 @@ private :
     struct sockaddr_in serv_addr; 
 
     std::vector <std::string> file_data;
+
+    Decrypt *decrypt;
 
 public :
 

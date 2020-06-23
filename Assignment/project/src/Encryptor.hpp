@@ -22,9 +22,9 @@ private :
     std::vector <std::string> data; 
 
 public :
-    Encryptor(std::string _file_name);
+    Encryptor(){}
     
-    ~Encryptor();
+    //~Encryptor();
 	
 };
 

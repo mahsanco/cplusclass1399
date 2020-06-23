@@ -1,7 +1,9 @@
 #include "FileSender.hpp"
 
 FileSender::FileSender() 
-{}
+{
+	encrypt = new Encrypt();
+}
 
 
 void FileSender::get_file_name_input()
@@ -20,13 +22,14 @@ std::string FileSender::return_file_name()
 
 void FileSender::read_file_data() 
 {
-	std::string buffer;
+	char buffer[1024];
 
 	std::ifstream infile(file_name, std::ios::binary);
 
-	while (getline(infile, buffer))
+	while (infile.getline(buffer, 1024))
 	{
-		send_data_to_server(buffer);
+		std::string temp = encrypt -> encrypt_file_input(buffer);
+		send_data_to_server(temp);
 	}
 	send_data_to_server("\0");
 }

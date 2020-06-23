@@ -2,6 +2,8 @@
 
 Server::Server()
 {
+	decrypt = new Decrypt();
+
 	try
 	{	
 		make_ready_server();
@@ -66,12 +68,13 @@ std::string Server::get_name_from_socket()
 std::vector <std::string> Server::get_data_from_socket()
 {	
 	std::ofstream outfile(return_file_name(), std::ios::binary);
-	char buffer[1024] = {0};
+	char buffer[1024];
 	int addrlen = sizeof(serv_addr); 
 
 	while (read(new_socket, buffer, 1024))
 	{	
-		std::string data = (std::string)buffer;
+		std::string data = decrypt -> decrypt_file_input(buffer);
+		//std::string data = (std::string)buffer;
 		file_data.push_back(data);	
 		outfile << file_data[file_data.size()-1] << std::endl;
 	}
